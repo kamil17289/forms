@@ -2,6 +2,7 @@
 
 namespace Nethead\Forms;
 
+use Nethead\Forms\Helpers\Str;
 use Nethead\Markup\Html\HasHtmlAttributes;
 
 /**
@@ -19,7 +20,7 @@ abstract class Form {
     /**
      * @var
      */
-    public $slug;
+    protected $slug = '';
 
     /**
      * @var bool
@@ -46,9 +47,25 @@ abstract class Form {
      */
     protected $fields = [];
 
+    /**
+     * @return mixed
+     */
+    abstract protected function createFields();
+
+    /**
+     * @return string
+     */
+    abstract public function getAction() : string;
+
+    /**
+     * Form constructor.
+     * @param string $method
+     * @param string $title
+     */
     public function __construct(string $method = '', string $title = '')
     {
         $this->setMethod($method);
+        $this->setTitle($title);
     }
 
     /**
@@ -70,6 +87,14 @@ abstract class Form {
     }
 
     /**
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
      * @param string $title
      */
     public function setTitle(string $title = '')
@@ -79,5 +104,54 @@ abstract class Form {
         }
 
         $this->title = $title;
+        $this->slug = Str::slugify($title);
+    }
+
+    /**
+     * @param bool $slugified
+     * @return string
+     */
+    public function getTitle($slugified = false)
+    {
+        if ($slugified) {
+            return $this->slug;
+        }
+
+        return $this->title;
+    }
+
+    public function addField()
+    {
+
+    }
+
+    public function getField()
+    {
+
+    }
+
+    public function getAllFields()
+    {
+
+    }
+
+    public function getFieldsNames()
+    {
+
+    }
+
+    public function render() : string
+    {
+
+    }
+
+    public function open() : string
+    {
+
+    }
+
+    public function close() : string
+    {
+
     }
 }
