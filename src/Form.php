@@ -51,6 +51,9 @@ abstract class Form {
      */
     protected $inputs = [];
 
+    /**
+     * @var FormTag|null
+     */
     protected $htmlTag = null;
 
     /**
