@@ -2,6 +2,8 @@
 
 namespace Nethead\Forms;
 
+use Nethead\Forms\Abstracts\Element;
+use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
 use Nethead\Markup\Html\Form as FormTag;
 
@@ -10,6 +12,8 @@ use Nethead\Markup\Html\Form as FormTag;
  * @package Nethead\Forms
  */
 abstract class Form {
+    use HasHtmlRepresentation;
+
     /**
      * Human readable form title
      * @var
@@ -52,11 +56,6 @@ abstract class Form {
     protected $inputs = [];
 
     /**
-     * @var FormTag|null
-     */
-    protected $htmlTag = null;
-
-    /**
      * Callback to be implemented in extending classes
      * It is called in the constructor so each extending class can create it's inputs
      * @return mixed
@@ -79,7 +78,7 @@ abstract class Form {
         $this->setMethod($method);
         $this->setTitle($title);
 
-        $this->htmlTag = new FormTag($this->getAction(), $this->getMethod());
+        $this->html = new FormTag($this->getAction(), $this->getMethod());
 
         static::createInputs();
     }
@@ -153,18 +152,17 @@ abstract class Form {
     }
 
     /**
-     * @return FormTag|null
+     * @param Element $input
      */
-    public function html()
+    public function addInput(Element $input)
     {
-        return $this->htmlTag;
+        $this->inputs[$input->getName()] = $input;
     }
 
-    public function addInput()
-    {
-
-    }
-
+    /**
+     * @param string $name
+     * @return mixed|null
+     */
     public function getInput(string $name)
     {
         if (isset($this->inputs[$name])) {
@@ -174,14 +172,46 @@ abstract class Form {
         return null;
     }
 
+    /**
+     * @return array
+     */
     public function getAllInputs()
     {
         return $this->inputs;
     }
 
+    /**
+     * @return array
+     */
     public function getInputNames()
     {
         return array_keys($this->inputs);
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        $array = [];
+
+        foreach($this->inputs as $name => $input) {
+            $array[$name] = $input->getValue();
+        }
+
+        return $array;
+    }
+
+    /**
+     * @param array $data
+     */
+    public function fillFromArray(array $data)
+    {
+        foreach($this->inputs as $name => $input) {
+            if (array_key_exists($name, $data)) {
+                $input->setValue($data[$name]);
+            }
+        }
     }
 
     public function render() : string

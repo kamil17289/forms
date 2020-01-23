@@ -6,7 +6,7 @@ class Str {
     /**
      * https://stackoverflow.com/questions/2955251/php-function-to-make-slug-url-string
      * @param $text
-     * @return bool|false|string|string[]|null
+     * @return string
      */
     public static function slugify($text)
     {
@@ -32,6 +32,6 @@ class Str {
             return 'n-a';
         }
 
-        return $text;
+        return (string) $text;
     }
 }
