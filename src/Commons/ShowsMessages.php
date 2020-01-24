@@ -24,7 +24,7 @@ trait ShowsMessages {
      * @param string $severity
      * @return array
      */
-    public function getBySeverity(string $severity)
+    public function getMessagesBySeverity(string $severity)
     {
         $found = [];
 
@@ -50,9 +50,17 @@ trait ShowsMessages {
     }
 
     /**
+     * @return bool
+     */
+    public function hasMessages() : bool
+    {
+        return ! empty($this->messages);
+    }
+
+    /**
      * @param string $message
      */
-    public function setError(string $message)
+    public function setErrorMessage(string $message)
     {
         $this->addMessage($message, 'error');
     }
@@ -60,7 +68,7 @@ trait ShowsMessages {
     /**
      * @param string $message
      */
-    public function setWarning(string $message)
+    public function setWarningMessage(string $message)
     {
         $this->addMessage($message, 'warning');
     }
@@ -68,7 +76,7 @@ trait ShowsMessages {
     /**
      * @param string $message
      */
-    public function setNotice(string $message)
+    public function setNoticeMessage(string $message)
     {
         $this->addMessage($message, 'notice');
     }
@@ -76,7 +84,7 @@ trait ShowsMessages {
     /**
      * @param string $message
      */
-    public function setInfo(string $message)
+    public function setInfoMessage(string $message)
     {
         $this->addMessage($message, 'info');
     }

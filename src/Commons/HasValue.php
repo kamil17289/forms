@@ -8,12 +8,12 @@ namespace Nethead\Forms\Commons;
  */
 trait HasValue {
     /**
-     * @var string
+     * @var mixed
      */
     protected $currentValue = '';
 
     /**
-     * @var string
+     * @var mixed
      */
     protected $defaultValue = '';
 
@@ -36,5 +36,21 @@ trait HasValue {
     public function getValue()
     {
         return $this->currentValue;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param string $defaultValue
+     */
+    public function setDefaultValue($defaultValue) : void
+    {
+        $this->defaultValue = $defaultValue;
     }
 }

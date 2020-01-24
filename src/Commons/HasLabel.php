@@ -15,12 +15,12 @@ trait HasLabel {
     protected $label = null;
 
     /**
-     * @param string $text
+     * @param mixed $text
      * @param string $for
      * @param array $attributes
      * @param string $form
      */
-    public function setLabel(string $text, string $for, array $attributes = [], $form = '')
+    public function setLabel($text, string $for, array $attributes = [], $form = '')
     {
         $this->label = new Label($for, $text, $attributes, $form);
     }

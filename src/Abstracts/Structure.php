@@ -6,7 +6,7 @@ namespace Nethead\Forms\Abstracts;
  * Class Structure
  * @package Nethead\Forms\Abstracts
  */
-abstract class Structure extends Element {
+abstract class Structure {
     /**
      * @var array
      */
@@ -14,13 +14,10 @@ abstract class Structure extends Element {
 
     /**
      * Structure constructor.
-     * @param string $name
      * @param array $elements
      */
-    public function __construct(string $name, array $elements = [])
+    public function __construct(array $elements = [])
     {
-        parent::__construct($name);
-
         $this->addElements($elements);
     }
 
@@ -37,10 +34,33 @@ abstract class Structure extends Element {
     }
 
     /**
-     * @param Element $element
+     * @param object $element Any object that can be converted to string
      */
-    public function addElement(Element $element)
+    public function addElement(object $element)
     {
-        $this->elements[$element->getName()] = $element;
+        if (method_exists($element, '__toString')) {
+            $this->elements[] = $element;
+        }
     }
+
+    /**
+     * @return array
+     */
+    public function getElements() : array
+    {
+        return $this->elements;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->render();
+    }
+
+    /**
+     * @return string
+     */
+    abstract public function render() : string;
 }

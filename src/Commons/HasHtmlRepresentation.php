@@ -10,7 +10,7 @@ use Nethead\Markup\Html\Tag;
  */
 trait HasHtmlRepresentation {
     /**
-     * @var null
+     * @var Tag|null
      */
     protected $html = null;
 
@@ -23,10 +23,18 @@ trait HasHtmlRepresentation {
     }
 
     /**
-     * @return null
+     * @return Tag|null
      */
     public function getHtml()
     {
         return $this->html;
+    }
+
+    /**
+     * @param array $attributes
+     */
+    public function updateHtmlRepresentation(array $attributes)
+    {
+        $this->html->mergeHtmlAttributes($attributes);
     }
 }
