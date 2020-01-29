@@ -9,12 +9,23 @@ use Nethead\Markup\Html\Tag;
  * Class FormGroup
  * @package Nethead\Forms\Structures
  */
-class FormGroup extends Structure {
+class FormGroup extends Structure
+{
     /**
      * @return string
      */
-    public function render() : string
+    public function wrapperTag()
     {
-        return (string) new Tag('div', [], $this->getElements());
+        return 'div';
+    }
+
+    /**
+     * @return array
+     */
+    public function wrapperAttributes()
+    {
+        return [
+            'class' => 'form-group'
+        ];
     }
 }

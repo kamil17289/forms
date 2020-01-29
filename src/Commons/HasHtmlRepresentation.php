@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Commons;
 
-use Nethead\Markup\Html\Tag;
+use Nethead\Forms\Abstracts\Structure;
 
 /**
  * Trait HasHtmlRepresentation
@@ -10,20 +10,20 @@ use Nethead\Markup\Html\Tag;
  */
 trait HasHtmlRepresentation {
     /**
-     * @var Tag|null
+     * @var Structure|null
      */
     protected $html = null;
 
     /**
-     * @param Tag $tag
+     * @param Structure $structure
      */
-    public function setHtml(Tag $tag)
+    public function setHtml(Structure $structure)
     {
-        $this->html = $tag;
+        $this->html = $structure;
     }
 
     /**
-     * @return Tag|null
+     * @return Structure|null
      */
     public function getHtml()
     {
@@ -31,10 +31,15 @@ trait HasHtmlRepresentation {
     }
 
     /**
+     * @param string $name
      * @param array $attributes
      */
-    public function updateHtmlRepresentation(array $attributes)
+    public function updateHtmlRepresentation(string $name, array $attributes = [])
     {
-        $this->html->mergeHtmlAttributes($attributes);
+        if ($this->getHtml()->hasElement($name)) {
+            $this->getHtml()
+                ->getElement($name)
+                ->mergeHtmlAttributes($attributes);
+        }
     }
 }

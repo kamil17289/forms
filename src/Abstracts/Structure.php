@@ -2,6 +2,8 @@
 
 namespace Nethead\Forms\Abstracts;
 
+use Nethead\Markup\Html\Tag;
+
 /**
  * Class Structure
  * @package Nethead\Forms\Abstracts
@@ -13,12 +15,45 @@ abstract class Structure {
     public $elements = [];
 
     /**
+     * @var Tag|null
+     */
+    public $wrapper = null;
+
+    /**
      * Structure constructor.
      * @param array $elements
      */
     public function __construct(array $elements = [])
     {
         $this->addElements($elements);
+
+        if (method_exists($this, 'wrapperTag')) {
+            $wrapperTag = static::wrapperTag();
+
+            $this->wrapper = new Tag($wrapperTag);
+
+            if (method_exists($this, 'wrapperAttributes')) {
+                $wrapperAttributes = static::wrapperAttributes();
+
+                $this->wrapper->setHtmlAttributes($wrapperAttributes);
+            }
+        }
+    }
+
+    /**
+     * @param Tag $wrapper
+     */
+    public function setWrapper(Tag $wrapper)
+    {
+        $this->wrapper = $wrapper;
+    }
+
+    /**
+     * @return Tag|null
+     */
+    public function getWrapper()
+    {
+        return $this->wrapper;
     }
 
     /**
@@ -27,19 +62,20 @@ abstract class Structure {
     public function addElements(array $elements)
     {
         if (! empty($elements)) {
-            foreach($elements as $element) {
-                $this->addElement($element);
+            foreach($elements as $name => $element) {
+                $this->addElement($name, $element);
             }
         }
     }
 
     /**
+     * @param string $name
      * @param object $element Any object that can be converted to string
      */
-    public function addElement(object $element)
+    public function addElement(string $name, object $element)
     {
         if (method_exists($element, '__toString')) {
-            $this->elements[] = $element;
+            $this->elements[$name] = $element;
         }
     }
 
@@ -49,6 +85,29 @@ abstract class Structure {
     public function getElements() : array
     {
         return $this->elements;
+    }
+
+    /**
+     * @param string $name
+     * @param null $default
+     * @return Tag|Structure|null
+     */
+    public function getElement(string $name, $default = null)
+    {
+        if (isset($this->elements[$name])) {
+            return $this->elements[$name];
+        }
+
+        return $default;
+    }
+
+    /**
+     * @param string $name
+     * @return bool
+     */
+    public function hasElement(string $name)
+    {
+        return array_key_exists($name, $this->elements);
     }
 
     /**
@@ -62,5 +121,14 @@ abstract class Structure {
     /**
      * @return string
      */
-    abstract public function render() : string;
+    public function render() : string
+    {
+        if (! is_null($this->wrapper)) {
+            $this->wrapper->setContents($this->getElements());
+
+            return (string) $this->wrapper;
+        }
+
+        return implode(PHP_EOL, $this->getElements());
+    }
 }

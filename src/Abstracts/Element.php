@@ -4,7 +4,6 @@ namespace Nethead\Forms\Abstracts;
 
 use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
-use Nethead\Markup\Html\Tag;
 
 /**
  * Class Element
@@ -19,12 +18,20 @@ abstract class Element {
     public $name;
 
     /**
+     * @var string
+     */
+    public $id;
+
+    /**
      * Element constructor.
      * @param string $name
+     * @throws \Exception
      */
     public function __construct(string $name)
     {
         $this->name = Str::slugify($name);
+
+        $this->id = $this->generateID();
     }
 
     /**
@@ -44,15 +51,24 @@ abstract class Element {
     }
 
     /**
+     * @throws \Exception
      * @return string
      */
-    public function render()
+    protected function generateID()
     {
-        return (string) $this->createHTML();
+        return $this->getName() . '-' . Str::random(5);
     }
 
     /**
-     * @return Tag
+     * @return string
      */
-    abstract protected function createHTML() : Structure;
+    public function getID() : string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    abstract public function render();
 }
