@@ -3,15 +3,15 @@
 namespace Nethead\Forms\Inputs;
 
 /**
- * Class Email
+ * Class Color
  * @package Nethead\Forms\Inputs
  */
-class Email extends Text {
+class Color extends Text {
     /**
      * @return string
      */
-    protected function getInputType(): string
+    public function getInputType(): string
     {
-        return 'email';
+        return 'color';
     }
 }

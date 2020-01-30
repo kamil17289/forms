@@ -4,9 +4,13 @@ namespace Nethead\Forms\Inputs;
 
 use Nethead\Markup\Html\Input as HtmlInput;
 
-class Password extends Text {
+/**
+ * Class File
+ * @package Nethead\Forms\Inputs
+ */
+class File extends Text {
     /**
-     * Password constructor.
+     * File constructor.
      * @param string $name
      * @param string $label
      * @throws \Exception
@@ -23,7 +27,7 @@ class Password extends Text {
     {
         $input = parent::getInput();
 
-        $input->setHtmlAttribute('value', '');
+        $input->removeHtmlAttribute('value');
 
         return $input;
     }
@@ -33,14 +37,6 @@ class Password extends Text {
      */
     protected function getInputType(): string
     {
-        return 'password';
-    }
-
-    /**
-     * @param string $value
-     */
-    public function forceValue(string $value)
-    {
-        $this->setValue($value);
+        return 'file';
     }
 }

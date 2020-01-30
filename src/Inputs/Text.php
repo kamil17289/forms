@@ -33,7 +33,7 @@ class Text extends FormInput {
     {
         $this->setHtml(new FormGroup([
             'label' => $this->getLabel(),
-            'input' => $this->getTextInput(),
+            'input' => $this->getInput(),
             'messages' => new Messages($this->getAllMessages())
         ]));
 
@@ -41,11 +41,19 @@ class Text extends FormInput {
     }
 
     /**
+     * @return string
+     */
+    protected function getInputType() : string
+    {
+        return 'text';
+    }
+
+    /**
      * @return HtmlInput
      */
-    protected function getTextInput()
+    protected function getInput()
     {
-        return new HtmlInput('text', $this->getName(), $this->getValue(), [
+        return new HtmlInput($this->getInputType(), $this->getName(), $this->getValue(), [
             'id' => $this->getID()
         ]);
     }
