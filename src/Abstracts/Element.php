@@ -70,5 +70,13 @@ abstract class Element {
     /**
      * @return string
      */
+    public function __toString()
+    {
+        return $this->render();
+    }
+
+    /**
+     * @return string
+     */
     abstract public function render();
 }

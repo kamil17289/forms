@@ -5,7 +5,9 @@ namespace Nethead\Forms;
 use Nethead\Forms\Abstracts\Element;
 use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
-use Nethead\Markup\Html\Form as FormTag;
+use Nethead\Forms\Inputs\Hidden;
+use Nethead\Forms\Structures\Markup;
+use Nethead\Markup\Html\Form as HtmlForm;
 
 /**
  * Class Form
@@ -72,13 +74,29 @@ abstract class Form {
      * Form constructor.
      * @param string $method
      * @param string $title
+     * @param bool $withFiles
+     * @param string $charset
+     * @throws \Exception
      */
-    public function __construct(string $method = '', string $title = '')
+    public function __construct(string $title = '', string $method = '', bool $withFiles = false, string $charset = 'UTF-8')
     {
         $this->setMethod($method);
         $this->setTitle($title);
 
-        $this->html = new FormTag($this->getAction(), $this->getMethod());
+        $formTag = new HtmlForm($this->getAction(), $this->getMethod());
+
+        $formTag->acceptCharset($charset);
+
+        if ($withFiles) {
+            $formTag->enctype(HtmlForm::ENCTYPE_MULTIPART);
+        }
+        else {
+            $formTag->enctype(HtmlForm::ENCTYPE_URLENCODED);
+        }
+
+        $this->html = new Markup([
+            'form' => $formTag
+        ]);
 
         static::createInputs();
     }
@@ -87,6 +105,7 @@ abstract class Form {
      * Set the HTTP method to use
      * Automatically add spoofed method input if necessary
      * @param string $method
+     * @throws \Exception
      */
     public function setMethod(string $method = '')
     {
@@ -107,10 +126,11 @@ abstract class Form {
 
     /**
      * @param string $method
+     * @throws \Exception
      */
     protected function addSpoofedMethodInput(string $method)
     {
-
+        $this->addInput(new Hidden('_method', $method));
     }
 
     /**
@@ -204,6 +224,7 @@ abstract class Form {
 
     /**
      * @param array $data
+     * @todo adapt for multidimensional arrays
      */
     public function fillFromArray(array $data)
     {
@@ -214,18 +235,35 @@ abstract class Form {
         }
     }
 
+    /**
+     * @return string
+     */
     public function render() : string
     {
+        $this->getHtml()
+            ->getElement('form')
+            ->setContents($this->getAllInputs());
 
+        return (string) $this->getHtml();
     }
 
+    /**
+     * @return string
+     */
     public function open() : string
     {
-
+        return $this->getHtml()
+            ->getElement('form')
+            ->open();
     }
 
+    /**
+     * @return string
+     */
     public function close() : string
     {
-
+        return $this->getHtml()
+            ->getElement('form')
+            ->close();
     }
 }

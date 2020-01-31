@@ -34,7 +34,7 @@ class Button extends Control {
      */
     public function render()
     {
-        return new Markup([
+        return (string) new Markup([
             'button' => new HtmlButton('button', '', [], $this->text)
         ]);
     }

@@ -21,7 +21,7 @@ class Hidden extends FormInput {
      */
     public function __construct(string $name, string $currentValue = '', string $defaultValue = '')
     {
-        $this->name = Str::slugify($name);
+        $this->name = $name;
         $this->id = $this->generateID();
         $this->setDefaultValue($defaultValue);
         $this->setValue($currentValue);

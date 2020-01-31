@@ -15,7 +15,7 @@ class Submit extends Button {
      */
     public function render()
     {
-        return new Markup([
+        return (string) new Markup([
             'button' => new HtmlButton('submit', '', [], $this->text)
         ]);
     }
