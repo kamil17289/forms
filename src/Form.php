@@ -99,6 +99,10 @@ abstract class Form {
         ]);
 
         static::createInputs();
+
+        if (method_exists($this, 'initButtons')) {
+            $this->initButtons();
+        }
     }
 
     /**
@@ -224,7 +228,20 @@ abstract class Form {
 
     /**
      * @param array $data
-     * @todo adapt for multidimensional arrays
+     * @return Form
+     * @throws \Exception
+     */
+    public static function createFromArray(array $data)
+    {
+        $form = new static();
+
+        $form->fillFromArray($data);
+
+        return $form;
+    }
+
+    /**
+     * @param array $data
      */
     public function fillFromArray(array $data)
     {
