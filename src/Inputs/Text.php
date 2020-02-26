@@ -23,6 +23,12 @@ class Text extends FormInput {
     public function __construct(string $name, string $label, string $currentValue = '', string $defaultValue = '')
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
+
+        $this->setHtml(new FormGroup([
+            'label' => $this->getLabel(),
+            'input' => $this->getInput(),
+            'messages' => new Messages($this->getAllMessages())
+        ]));
     }
 
     /**
@@ -31,12 +37,6 @@ class Text extends FormInput {
      */
     public function render()
     {
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-
         return (string) $this->getHtml()->render();
     }
 

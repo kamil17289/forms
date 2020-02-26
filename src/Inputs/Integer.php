@@ -41,7 +41,7 @@ class Integer extends Text {
     /**
      * @return string
      */
-    public function getInputType(): string
+    public function getInputType() : string
     {
         return 'number';
     }

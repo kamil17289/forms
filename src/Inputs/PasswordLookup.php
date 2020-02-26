@@ -19,11 +19,15 @@ class PasswordLookup extends Password {
     protected $lookupIcon = 'fas fa-eye';
 
     /**
-     * @return string
+     * PasswordLookup constructor.
+     * @param string $name
+     * @param string $label
      * @throws \Exception
      */
-    public function render()
+    public function __construct(string $name, string $label)
     {
+        parent::__construct($name, $label);
+
         $markup = new Markup([
             'input' => $this->getInput(),
             'toggle' => $this->getLookupButton(),
@@ -34,7 +38,14 @@ class PasswordLookup extends Password {
             'markup' => $markup,
             'messages' => new Messages($this->getAllMessages()),
         ]));
+    }
 
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function render()
+    {
         return (string) $this->getHtml()->render();
     }
 

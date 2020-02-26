@@ -23,6 +23,13 @@ class BooleanCheckbox extends FormInput {
     public function __construct(string $name, string $label, bool $currentValue = null, bool $defaultValue = false)
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
+
+        $this->setHtml(new FormGroup([
+            'label' => $this->getLabel(),
+            'boolean-false' => $this->getBooleanFalseInput(),
+            'boolean-true' => $this->getBooleanTrueInput(),
+            'messages' => new Messages($this->getAllMessages())
+        ]));
     }
 
     /**
@@ -57,13 +64,6 @@ class BooleanCheckbox extends FormInput {
      */
     public function render()
     {
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'boolean-false' => $this->getBooleanFalseInput(),
-            'boolean-true' => $this->getBooleanTrueInput(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-
         return (string) $this->getHtml()->render();
     }
 }

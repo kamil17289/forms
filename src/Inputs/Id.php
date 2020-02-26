@@ -5,18 +5,18 @@ namespace Nethead\Forms\Inputs;
 use Nethead\Markup\Html\Input as HtmlInput;
 
 /**
- * Class Checkbox
+ * Class Id
  * @package Nethead\Forms\Inputs
  */
-class Checkbox extends Radio {
+class Id extends Integer {
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    public function getInput()
     {
         $input = parent::getInput();
 
-        $input->setHtmlAttribute('type', 'checkbox');
+        $input->setHtmlAttribute('min', 1);
 
         return $input;
     }

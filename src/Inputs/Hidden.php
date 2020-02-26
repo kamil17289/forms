@@ -25,6 +25,10 @@ class Hidden extends FormInput {
         $this->id = $this->generateID();
         $this->setDefaultValue($defaultValue);
         $this->setValue($currentValue);
+
+        $this->setHtml(new Markup([
+            'input' => $this->getHiddenInput(),
+        ]));
     }
 
     /**
@@ -33,10 +37,6 @@ class Hidden extends FormInput {
      */
     public function render()
     {
-        $this->setHtml(new Markup([
-            'input' => $this->getHiddenInput(),
-        ]));
-
         return (string) $this->getHtml()->render();
     }
 

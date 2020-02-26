@@ -39,6 +39,13 @@ class DataList extends FormInput {
         $this->listID = $this->getID() . '_list';
 
         $this->options = $options;
+
+        $this->setHtml(new FormGroup([
+            'label' => $this->getLabel(),
+            'input' => $this->getInput(),
+            'datalist' => $this->getDataList(),
+            'messages' => new Messages($this->getAllMessages())
+        ]));
     }
 
     /**
@@ -70,13 +77,6 @@ class DataList extends FormInput {
      */
     public function render()
     {
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'datalist' => $this->getDataList(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-
         return (string) $this->getHtml()->render();
     }
 }
