@@ -268,7 +268,9 @@ abstract class Form {
     {
         foreach($this->inputs as $name => $input) {
             if (array_key_exists($name, $data)) {
-                $input->setValue($data[$name]);
+                if (! is_array($data[$name])) {
+                    $input->setValue($data[$name]);
+                }
             }
         }
     }
