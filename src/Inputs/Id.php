@@ -17,6 +17,7 @@ class Id extends Integer {
         $input = parent::getInput();
 
         $input->setHtmlAttribute('min', 1);
+        $input->setHtmlAttribute('readonly', true);
 
         return $input;
     }
