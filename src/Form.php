@@ -58,6 +58,11 @@ abstract class Form {
     protected $inputs = [];
 
     /**
+     * @var string
+     */
+    protected $formId = '';
+
+    /**
      * Callback to be implemented in extending classes
      * It is called in the constructor so each extending class can create it's inputs
      * @return mixed
@@ -94,15 +99,31 @@ abstract class Form {
             $formTag->enctype(HtmlForm::ENCTYPE_URLENCODED);
         }
 
+        $this->formId = $this->getTitle(true) . '-' . Str::random(5);
+
+        $formTag->setHtmlAttribute('id', $this->getFormId());
+
         $this->html = new Markup([
             'form' => $formTag
         ]);
 
         static::createInputs();
+    }
 
-        if (method_exists($this, 'initButtons')) {
-            $this->initButtons();
-        }
+    /**
+     * @return string
+     */
+    public function getFormId() : string
+    {
+        return $this->formId;
+    }
+
+    /**
+     * @param string $formId
+     */
+    public function setFormId(string $formId) : void
+    {
+        $this->formId = $formId;
     }
 
     /**

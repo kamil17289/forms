@@ -10,13 +10,12 @@ use Nethead\Markup\Html\Button as HtmlButton;
  * @package Nethead\Forms\Controls
  */
 class Submit extends Button {
-    /**
-     * @return Markup|string
-     */
-    public function render()
+    public function __construct(string $name, string $text)
     {
-        return (string) new Markup([
-            'button' => new HtmlButton('submit', '', [], $this->text)
-        ]);
+        parent::__construct($name, $text);
+
+        $this->getHtml()
+            ->getElement('button')
+            ->setHtmlAttribute('type', 'submit');
     }
 }

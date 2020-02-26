@@ -28,10 +28,12 @@ trait HasToolbar {
 
         foreach($this->buttons as $type => $className) {
             $button = $this->renderButton($type);
-            dd($button);
-            $button->getHtml()->setHtmlAttribute('form', 'test');
 
             if ($button) {
+                $button->getHtml()
+                    ->getElement('button')
+                    ->setHtmlAttribute('form', $this->getFormId());
+
                 $toolbar->addElement($type, $button);
             }
         }

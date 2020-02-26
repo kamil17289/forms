@@ -10,4 +10,22 @@ use Nethead\Markup\Commons\RendersIcons;
  */
 abstract class Control extends Element {
     use RendersIcons;
+
+    /**
+     * Control constructor.
+     * @param string $name
+     * @throws \Exception
+     */
+    public function __construct(string $name)
+    {
+        parent::__construct($name);
+    }
+
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        return (string) $this->getHtml();
+    }
 }

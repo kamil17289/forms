@@ -3,7 +3,6 @@
 namespace Nethead\Forms\Structures;
 
 use Nethead\Forms\Abstracts\Structure;
-use Nethead\Markup\Html\Tag;
 
 /**
  * Class FormGroup

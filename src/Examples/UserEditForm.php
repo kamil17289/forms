@@ -33,6 +33,10 @@ class UserEditForm extends Form {
         $this->addInput(new Password('password', 'Password'));
     }
 
+    /**
+     * @return Submit
+     * @throws \Exception
+     */
     public function getSubmitButton()
     {
         return new Submit('submit', 'Enter');
