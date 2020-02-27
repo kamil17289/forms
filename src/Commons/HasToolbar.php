@@ -2,8 +2,6 @@
 
 namespace Nethead\Forms\Commons;
 
-use Nethead\Forms\Controls\Reset;
-use Nethead\Forms\Controls\Submit;
 use Nethead\Forms\Structures\Toolbar;
 
 /**
@@ -12,12 +10,15 @@ use Nethead\Forms\Structures\Toolbar;
  */
 trait HasToolbar {
     /**
-     * @var array
+     * @return array
      */
-    public $buttons = [
-        'submit' => Submit::class,
-        'reset' => Reset::class,
-    ];
+    public function getButtons()
+    {
+        return [
+            'submit',
+            'reset',
+        ];
+    }
 
     /**
      * @return string
@@ -26,7 +27,7 @@ trait HasToolbar {
     {
         $toolbar = new Toolbar();
 
-        foreach($this->buttons as $type => $className) {
+        foreach($this->getButtons() as $type) {
             $button = $this->renderButton($type);
 
             if ($button) {
@@ -47,7 +48,9 @@ trait HasToolbar {
      */
     public function renderButton(string $type)
     {
-        if (isset($this->buttons[$type])) {
+        $buttons = $this->getButtons();
+
+        if (in_array($type, $buttons)) {
             $method = 'get' . ucfirst($type) . 'Button';
 
             if (method_exists($this, $method)) {

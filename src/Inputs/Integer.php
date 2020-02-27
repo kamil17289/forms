@@ -25,7 +25,7 @@ class Integer extends Text {
      */
     public function __construct(string $name, string $label, int $currentValue = null, int $step = 1, int $defaultValue = 0)
     {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
+        parent::__construct($name, $label, (string) $currentValue, $defaultValue);
 
         $this->step = $step;
     }

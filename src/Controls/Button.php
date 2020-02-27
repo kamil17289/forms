@@ -28,8 +28,16 @@ class Button extends Control {
 
         $this->text = $text;
 
-        $this->setHtml(new Markup([
+        $this->setHtml(static::createHtml());
+    }
+
+    /**
+     * @return Markup
+     */
+    protected function createHtml()
+    {
+        return new Markup([
             'button' => new HtmlButton('button', '', [], $this->text)
-        ]));
+        ]);
     }
 }

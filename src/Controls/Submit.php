@@ -3,19 +3,20 @@
 namespace Nethead\Forms\Controls;
 
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\Button as HtmlButton;
+use Nethead\Markup\Html\Input;
 
 /**
  * Class Submit
  * @package Nethead\Forms\Controls
  */
 class Submit extends Button {
-    public function __construct(string $name, string $text)
+    /**
+     * @return Markup
+     */
+    protected function createHtml()
     {
-        parent::__construct($name, $text);
-
-        $this->getHtml()
-            ->getElement('button')
-            ->setHtmlAttribute('type', 'submit');
+        return new Markup([
+            'button' => new Input('submit', $this->getName(), $this->text)
+        ]);
     }
 }

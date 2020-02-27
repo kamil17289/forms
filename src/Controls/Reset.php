@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Controls;
 
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\Button as HtmlButton;
+use Nethead\Markup\Html\Input;
 
 /**
  * Class Reset
@@ -11,12 +11,12 @@ use Nethead\Markup\Html\Button as HtmlButton;
  */
 class Reset extends Button {
     /**
-     * @return Markup|string
+     * @return Markup
      */
-    public function render()
+    protected function createHtml()
     {
         return new Markup([
-            'button' => new HtmlButton('reset', '', [], $this->text)
+            'button' => new Input('reset', $this->getName(), $this->text)
         ]);
     }
 }
