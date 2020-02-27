@@ -33,6 +33,10 @@ abstract class LaravelForm extends Form {
             $this->addSpoofedMethodInput($this->method);
 
             $this->method = $this->spoofedMethods[$this->method];
+
+            $this->getHtml()
+                ->getElement('form')
+                ->setHtmlAttribute('method', $this->getMethod());
         }
 
         $this->addCSRFToken();

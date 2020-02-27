@@ -24,9 +24,9 @@ class Link extends Button {
      */
     public function __construct(string $name, string $href, string $text)
     {
-        parent::__construct($name, $text);
-
         $this->href = $href;
+
+        parent::__construct($name, $text);
     }
 
     /**

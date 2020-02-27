@@ -27,7 +27,7 @@ abstract class ModelForm extends LaravelForm {
     {
         $this->model = $model;
 
-        $method = $this->model->exists ? 'PATCH' : 'PUT';
+        $method = $this->model->exists ? 'PATCH' : 'POST';
 
         parent::__construct($title, $method, $withFiles, $charset);
     }

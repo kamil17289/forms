@@ -29,7 +29,7 @@ abstract class Element {
      */
     public function __construct(string $name)
     {
-        $this->name = Str::slugify($name);
+        $this->name = $name;
 
         $this->id = $this->generateID();
     }
