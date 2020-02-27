@@ -5,7 +5,6 @@ namespace Nethead\Forms;
 use Nethead\Forms\Abstracts\Element;
 use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
-use Nethead\Forms\Inputs\Hidden;
 use Nethead\Forms\Structures\Markup;
 use Nethead\Markup\Html\Form as HtmlForm;
 
@@ -39,17 +38,6 @@ abstract class Form {
      * @var string
      */
     protected $method = 'POST';
-
-    /**
-     * Select methods for the ones which are not permitted with web forms
-     * @var array
-     */
-    protected $spoofedMethods = [
-        'PUT' => 'POST',
-        'PATCH' => 'POST',
-        'HEAD' => 'GET',
-        'DELETE' => 'POST',
-    ];
 
     /**
      * List of inputs within the form
@@ -140,22 +128,7 @@ abstract class Form {
 
         $method = strtoupper($method);
 
-        if (array_key_exists($method, $this->spoofedMethods)) {
-            $this->addSpoofedMethodInput($method);
-
-            $method = $this->spoofedMethods[$method];
-        }
-
         $this->method = $method;
-    }
-
-    /**
-     * @param string $method
-     * @throws \Exception
-     */
-    protected function addSpoofedMethodInput(string $method)
-    {
-        $this->addInput(new Hidden('_method', $method));
     }
 
     /**

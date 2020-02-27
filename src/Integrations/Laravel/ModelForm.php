@@ -3,13 +3,12 @@
 namespace Nethead\Forms\Integrations\Laravel;
 
 use Illuminate\Database\Eloquent\Model;
-use Nethead\Forms\Form;
 
 /**
  * Class ModelForm
  * @package Nethead\Forms\Integrations\Laravel
  */
-abstract class ModelForm extends Form {
+abstract class ModelForm extends LaravelForm {
     /**
      * @var Model|null
      */
