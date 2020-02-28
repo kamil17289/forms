@@ -28,7 +28,7 @@ class Select extends FormInput {
      * @param string $defaultValue
      * @throws \Exception
      */
-    public function __construct(string $name, string $label, array $options, $currentValue = null, $defaultValue = '')
+    public function __construct(string $name, string $label, array $options = [], $currentValue = null, $defaultValue = '')
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
 
@@ -44,8 +44,14 @@ class Select extends FormInput {
     /**
      * @param array $options
      */
-    protected function setOptions(array $options)
+    protected function setOptions(array $options = [])
     {
+        if (empty($options)) {
+            if (method_exists($this, 'getDefaultOptions')) {
+                $options = $this->getDefaultOptions();
+            }
+        }
+
         foreach($options as $value => $label) {
             if (is_array($label)) {
                 // we have an optgroup
@@ -101,6 +107,6 @@ class Select extends FormInput {
      */
     public function render()
     {
-        return (string) $this->getHtml()->render();
+        return (string) $this->getHtml();
     }
 }

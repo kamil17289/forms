@@ -51,12 +51,20 @@ abstract class Element {
     }
 
     /**
-     * @throws \Exception
      * @return string
      */
     protected function generateID()
     {
-        return $this->getName() . '-' . Str::random(5);
+        $id = $this->getName() . '-';
+
+        try {
+            $random = Str::random(5);
+        }
+        catch (\Exception $e) {
+            $random = substr(uniqid(), 0, 5);
+        }
+
+        return $id . $random;
     }
 
     /**

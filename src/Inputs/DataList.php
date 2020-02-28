@@ -77,6 +77,6 @@ class DataList extends FormInput {
      */
     public function render()
     {
-        return (string) $this->getHtml()->render();
+        return (string) $this->getHtml();
     }
 }
