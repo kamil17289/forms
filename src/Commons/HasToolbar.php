@@ -25,7 +25,7 @@ trait HasToolbar {
      */
     public function renderToolbar()
     {
-        $toolbar = new Toolbar();
+        $toolbar = new Toolbar($this->getFormId() . '-toolbar');
 
         foreach($this->getButtons() as $type) {
             $button = $this->renderButton($type);

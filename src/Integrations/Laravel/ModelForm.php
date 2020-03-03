@@ -18,12 +18,11 @@ abstract class ModelForm extends LaravelForm {
      * ModelForm constructor.
      * @param Model $model
      * @param string $title
-     * @param string $method
      * @param bool $withFiles
      * @param string $charset
      * @throws \Exception
      */
-    public function __construct(Model $model, string $title = '', string $method = '', bool $withFiles = false, string $charset = 'UTF-8')
+    public function __construct(Model $model, string $title = '', bool $withFiles = false, string $charset = 'UTF-8')
     {
         $this->model = $model;
 

@@ -5,7 +5,8 @@ namespace Nethead\Forms\Integrations\Laravel;
 use Nethead\Forms\Form;
 use Nethead\Forms\Inputs\Hidden;
 
-abstract class LaravelForm extends Form {
+abstract class LaravelForm extends Form
+{
     /**
      * Select methods for the ones which are not permitted with web forms
      * @var array
@@ -56,6 +57,10 @@ abstract class LaravelForm extends Form {
      */
     protected function addCSRFToken()
     {
-        $this->addInput(new Hidden('_token', csrf_token()));
+        $token = csrf_token();
+
+        if ($token) {
+            $this->addInput(new Hidden('_token', $token));
+        }
     }
 }

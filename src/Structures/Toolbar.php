@@ -3,11 +3,13 @@
 namespace Nethead\Forms\Structures;
 
 class Toolbar extends FormGroup {
-    public function __construct(array $elements = [])
+    public function __construct(string $id, array $elements = [])
     {
         parent::__construct($elements);
 
-        $this->getWrapper()
-            ->appendToAttribute('class', 'toolbar');
+        $wrapper = $this->getWrapper();
+
+        $wrapper->appendToAttribute('class', 'toolbar');
+        $wrapper->setHtmlAttribute('id', $id);
     }
 }
