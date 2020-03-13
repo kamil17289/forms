@@ -33,12 +33,6 @@ class Select extends FormInput {
         parent::__construct($name, $label, $currentValue, $defaultValue);
 
         $this->setOptions($options);
-
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'select' => $this->getSelect(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
     }
 
     /**
@@ -97,16 +91,8 @@ class Select extends FormInput {
     /**
      * @return HtmlSelect
      */
-    protected function getSelect()
+    protected function getInputElement()
     {
         return new HtmlSelect($this->getName(), $this->options);
-    }
-
-    /**
-     * @return string
-     */
-    public function render()
-    {
-        return (string) $this->getHtml();
     }
 }

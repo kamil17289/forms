@@ -40,18 +40,14 @@ class DataList extends FormInput {
 
         $this->options = $options;
 
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'datalist' => $this->getDataList(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
+        $this->getHtml()
+            ->addElement('datalist', $this->getDataList());
     }
 
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    protected function getInputElement()
     {
         return new HtmlInput('text', $this->getName(), $this->getValue(), [
             'id' => $this->getID(),
@@ -69,14 +65,5 @@ class DataList extends FormInput {
         }, $this->options);
 
         return new \Nethead\Markup\Html\Datalist($this->listID, [], $options);
-    }
-
-    /**
-     * @return string
-     * @throws \Exception
-     */
-    public function render()
-    {
-        return (string) $this->getHtml();
     }
 }

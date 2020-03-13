@@ -3,8 +3,6 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Forms\Structures\FormGroup;
-use Nethead\Forms\Structures\Messages;
 use Nethead\Markup\Html\Input as HtmlInput;
 
 /**
@@ -24,27 +22,15 @@ class BooleanCheckbox extends FormInput {
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
 
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'boolean-false' => $this->getBooleanFalseInput(),
-            'boolean-true' => $this->getBooleanTrueInput(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-    }
-
-    /**
-     * @return HtmlInput
-     */
-    protected function getBooleanFalseInput()
-    {
-        return new HtmlInput('hidden', $this->getName(), 0);
+        $this->getHtml()
+            ->addElement('input-false', new HtmlInput('hidden', $this->getName(), 0));
     }
 
     /**
      * @return HtmlInput
      * @throws \Exception
      */
-    protected function getBooleanTrueInput()
+    protected function getInputElement()
     {
         $input = new HtmlInput('checkbox', $this->getName(), 1, [
             'id' => $this->getID(),
@@ -56,14 +42,5 @@ class BooleanCheckbox extends FormInput {
         }
 
         return $input;
-    }
-
-    /**
-     * @return string
-     * @throws \Exception
-     */
-    public function render()
-    {
-        return (string) $this->getHtml()->render();
     }
 }

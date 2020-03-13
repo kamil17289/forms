@@ -5,7 +5,6 @@ namespace Nethead\Forms\Inputs;
 use Nethead\Forms\Abstracts\Input as FormInput;
 use Nethead\Forms\Structures\Markup;
 use Nethead\Markup\Html\Input as HtmlInput;
-use Nethead\Forms\Helpers\Str;
 
 /**
  * Class Text
@@ -27,23 +26,14 @@ class Hidden extends FormInput {
         $this->setValue($currentValue);
 
         $this->setHtml(new Markup([
-            'input' => $this->getHiddenInput(),
+            'input' => $this->getInputElement(),
         ]));
-    }
-
-    /**
-     * @return string
-     * @throws \Exception
-     */
-    public function render()
-    {
-        return (string) $this->getHtml()->render();
     }
 
     /**
      * @return HtmlInput
      */
-    protected function getHiddenInput()
+    protected function getInputElement()
     {
         return new HtmlInput('hidden', $this->getName(), $this->getValue(), [
             'id' => $this->getID()

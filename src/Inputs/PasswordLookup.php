@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Structures\FormGroup;
+use Nethead\Forms\Abstracts\Input;
 use Nethead\Forms\Structures\Markup;
 use Nethead\Forms\Structures\Messages;
 use Nethead\Markup\Html\Button;
@@ -27,26 +27,31 @@ class PasswordLookup extends Password {
     public function __construct(string $name, string $label)
     {
         parent::__construct($name, $label);
-
-        $markup = new Markup([
-            'input' => $this->getInput(),
-            'toggle' => $this->getLookupButton(),
-        ], 'div', ['class' => 'input-group']);
-
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'markup' => $markup,
-            'messages' => new Messages($this->getAllMessages()),
-        ]));
     }
 
     /**
-     * @return string
-     * @throws \Exception
+     * @return array
      */
-    public function render()
+    protected function getFieldset() : array
     {
-        return (string) $this->getHtml()->render();
+        $inputElement = parent::getInputElement();
+
+        if (! is_null(Input::$mutators['inputs'])) {
+            $mutator = Input::$mutators['inputs'];
+
+            $inputElement = $mutator($inputElement);
+        }
+
+        $markup = new Markup([
+            'input' => $inputElement,
+            'toggle' => $this->getLookupButton(),
+        ], 'div', ['class' => 'input-group']);
+
+        return [
+            'label' => $this->getLabel(),
+            'markup' => $markup,
+            'messages' => new Messages($this->getAllMessages())
+        ];
     }
 
     /**

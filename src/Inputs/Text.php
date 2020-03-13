@@ -4,8 +4,6 @@ namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
 use Nethead\Markup\Html\Input as HtmlInput;
-use Nethead\Forms\Structures\Messages;
-use Nethead\Forms\Structures\FormGroup;
 
 /**
  * Class Text
@@ -23,21 +21,6 @@ class Text extends FormInput {
     public function __construct(string $name, string $label, string $currentValue = '', string $defaultValue = '')
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
-
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-    }
-
-    /**
-     * @return string
-     * @throws \Exception
-     */
-    public function render()
-    {
-        return (string) $this->getHtml()->render();
     }
 
     /**
@@ -51,7 +34,7 @@ class Text extends FormInput {
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    protected function getInputElement()
     {
         return new HtmlInput($this->getInputType(), $this->getName(), $this->getValue(), [
             'id' => $this->getID()

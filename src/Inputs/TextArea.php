@@ -4,8 +4,6 @@ namespace Nethead\Forms\Inputs;
 
 use Nethead\Markup\Html\Textarea as HtmlTextArea;
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Forms\Structures\FormGroup;
-use Nethead\Forms\Structures\Messages;
 
 /**
  * Class TextArea
@@ -23,26 +21,12 @@ class TextArea extends FormInput {
     public function __construct(string $name, string $label, string $currentValue = '', string $defaultValue = '')
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
-
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getTextArea(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
-    }
-
-    /**
-     * @return string
-     */
-    public function render()
-    {
-        return (string) $this->getHtml()->render();
     }
 
     /**
      * @return HtmlTextArea
      */
-    protected function getTextArea()
+    protected function getInputElement()
     {
         return new HtmlTextArea($this->getName(), ['id' => $this->getID()], $this->getValue());
     }

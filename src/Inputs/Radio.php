@@ -30,18 +30,12 @@ class Radio extends FormInput {
         parent::__construct($name, $label, $value, $value);
 
         $this->selected = $selected;
-
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'messages' => new Messages($this->getAllMessages())
-        ]));
     }
 
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    protected function getInputElement()
     {
         $input = new HtmlInput('radio', $this->getName(), $this->getDefaultValue(), [
             'id' => $this->getID()
@@ -52,14 +46,5 @@ class Radio extends FormInput {
         }
 
         return $input;
-    }
-
-    /**
-     * @return string
-     * @throws \Exception
-     */
-    public function render()
-    {
-        return (string) $this->getHtml()->render();
     }
 }
