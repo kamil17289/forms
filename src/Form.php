@@ -91,9 +91,9 @@ abstract class Form {
 
         $formTag->setHtmlAttribute('id', $this->getFormId());
 
-        $this->html = new Markup([
+        $this->setHtml(new Markup([
             'form' => $formTag
-        ]);
+        ]));
 
         static::createInputs();
     }
