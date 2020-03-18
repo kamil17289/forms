@@ -34,8 +34,6 @@ class DataList extends FormInput {
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
 
-        $this->listID = $this->getID() . '_list';
-
         $this->options = $options;
 
         $this->getHtml()
@@ -49,7 +47,7 @@ class DataList extends FormInput {
     {
         return new HtmlInput('text', $this->getName(), $this->getValue(), [
             'id' => $this->getID(),
-            'list' => $this->listID
+            'list' => $this->getID() . '_list'
         ]);
     }
 
@@ -62,6 +60,6 @@ class DataList extends FormInput {
             return new Option($option, '');
         }, $this->options);
 
-        return new \Nethead\Markup\Html\Datalist($this->listID, [], $options);
+        return new \Nethead\Markup\Html\Datalist($this->getID() . '_list', [], $options);
     }
 }
