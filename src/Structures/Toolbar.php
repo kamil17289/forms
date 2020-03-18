@@ -2,14 +2,41 @@
 
 namespace Nethead\Forms\Structures;
 
-class Toolbar extends FormGroup {
+use Nethead\Forms\Abstracts\Structure;
+
+/**
+ * Class Toolbar
+ * @package Nethead\Forms\Structures
+ */
+class Toolbar extends Structure {
+    /**
+     * Toolbar constructor.
+     * @param string $id
+     * @param array $elements
+     */
     public function __construct(string $id, array $elements = [])
     {
         parent::__construct($elements);
 
-        $wrapper = $this->getWrapper();
+        $this->getWrapper()
+            ->setHtmlAttribute('id', $id);
+    }
 
-        $wrapper->appendToAttribute('class', 'toolbar');
-        $wrapper->setHtmlAttribute('id', $id);
+    /**
+     * @return string
+     */
+    public function wrapperTag()
+    {
+        return 'div';
+    }
+
+    /**
+     * @return array
+     */
+    public function wrapperAttributes()
+    {
+        return [
+            'class' => 'toolbar'
+        ];
     }
 }
