@@ -49,9 +49,9 @@ class Floating extends Text {
     /**
      * @return HtmlInput
      */
-    public function getInput()
+    public function getInputElement()
     {
-        $input = parent::getInput();
+        $input = parent::getInputElement();
 
         $input->setHtmlAttribute('step', $this->step);
 

@@ -3,7 +3,6 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Forms\Structures\FormGroup;
 use Nethead\Markup\Html\Input as HtmlInput;
 use Nethead\Markup\Html\Label;
 
@@ -20,28 +19,17 @@ class BooleanToggle extends FormInput {
     {
         parent::__construct($name, $label, $currentValue, $defaultValue);
 
-        $this->setHtml(new FormGroup([
-            'label' => $this->getLabel(),
-            'input' => $this->getInput(),
-            'toggle' => new Label($this->getID(), 'Toggle')
-        ]));
+        $this->getHtml()
+            ->addElement('toggle', new Label($this->getID(), 'Toggle'));
     }
 
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    protected function getInputElement()
     {
         return new HtmlInput('checkbox', $this->getName(), $this->getValue(), [
             'class' => 'toggle-switch'
         ]);
-    }
-
-    /**
-     * @return string
-     */
-    public function render()
-    {
-        return (string) $this->getHtml();
     }
 }

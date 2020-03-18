@@ -12,9 +12,9 @@ class Id extends Integer {
     /**
      * @return HtmlInput
      */
-    public function getInput()
+    public function getInputElement()
     {
-        $input = parent::getInput();
+        $input = parent::getInputElement();
 
         $input->setHtmlAttribute('min', 1);
         $input->setHtmlAttribute('readonly', true);

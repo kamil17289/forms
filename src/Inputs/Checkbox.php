@@ -12,9 +12,9 @@ class Checkbox extends Radio {
     /**
      * @return HtmlInput
      */
-    protected function getInput()
+    protected function getInputElement()
     {
-        $input = parent::getInput();
+        $input = parent::getInputElement();
 
         $input->setHtmlAttribute('type', 'checkbox');
 
