@@ -6,8 +6,6 @@ use Nethead\Forms\Abstracts\Input as FormInput;
 use Nethead\Markup\Html\Optgroup;
 use Nethead\Markup\Html\Option;
 use Nethead\Markup\Html\Select as HtmlSelect;
-use Nethead\Forms\Structures\FormGroup;
-use Nethead\Forms\Structures\Messages;
 
 /**
  * Class Select
@@ -30,9 +28,9 @@ class Select extends FormInput {
      */
     public function __construct(string $name, string $label, array $options = [], $currentValue = null, $defaultValue = '')
     {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
-
         $this->setOptions($options);
+
+        parent::__construct($name, $label, $currentValue, $defaultValue);
     }
 
     /**
@@ -94,5 +92,10 @@ class Select extends FormInput {
     protected function getInputElement()
     {
         return new HtmlSelect($this->getName(), $this->options);
+    }
+
+    public function render()
+    {
+        return (string) $this->getHtml()->render();
     }
 }
