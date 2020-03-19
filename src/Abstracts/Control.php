@@ -19,6 +19,8 @@ abstract class Control extends Element {
     public function __construct(string $name)
     {
         parent::__construct($name);
+
+
     }
 
     /**
@@ -26,6 +28,8 @@ abstract class Control extends Element {
      */
     public function render()
     {
-        return (string) $this->getHtml();
+        return $this->getHtml()->render();
     }
+
+    abstract protected function getControlElement();
 }
