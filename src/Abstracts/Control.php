@@ -2,6 +2,7 @@
 
 namespace Nethead\Forms\Abstracts;
 
+use Nethead\Forms\Commons\IsMutable;
 use Nethead\Markup\Commons\RendersIcons;
 
 /**
@@ -9,7 +10,7 @@ use Nethead\Markup\Commons\RendersIcons;
  * @package Nethead\Forms\Abstracts
  */
 abstract class Control extends Element {
-    use RendersIcons;
+    use RendersIcons, IsMutable;
 
     /**
      * Control constructor.
@@ -19,8 +20,12 @@ abstract class Control extends Element {
     public function __construct(string $name)
     {
         parent::__construct($name);
+    }
 
-
+    public function getMutableElement()
+    {
+        return $this->getHtml()
+            ->getElement('button');
     }
 
     /**
@@ -30,6 +35,4 @@ abstract class Control extends Element {
     {
         return $this->getHtml()->render();
     }
-
-    abstract protected function getControlElement();
 }

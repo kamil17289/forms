@@ -5,13 +5,15 @@ namespace Nethead\Forms\Commons;
 trait IsMutable {
     public static $mutators = [];
 
-    public function mutate()
+    public static function setMutator(callable $mutator)
     {
-
+        self::$mutators[] = $mutator;
     }
 
-    protected function getMutator()
+    public function mutate()
     {
-
+        foreach(self::$mutators as $mutator) {
+            call_user_func($mutator, $this);
+        }
     }
 }

@@ -36,12 +36,6 @@ class PasswordLookup extends Password {
     {
         $inputElement = parent::getInputElement();
 
-        if (! is_null(Input::$mutators['inputs'])) {
-            $mutator = Input::$mutators['inputs'];
-
-            $inputElement = $mutator($inputElement);
-        }
-
         $markup = new Markup([
             'input' => $inputElement,
             'toggle' => $this->getLookupButton(),
@@ -72,5 +66,15 @@ class PasswordLookup extends Password {
                 new Tag('i', ['class' => $this->lookupIcon])
             ])
         ]);
+    }
+
+    /**
+     *
+     */
+    public function getMutableElement()
+    {
+        return $this->getHtml()
+            ->getElement('markup')
+            ->getElement('input');
     }
 }

@@ -2,12 +2,14 @@
 
 namespace Nethead\Forms\Integrations\Bootstrap;
 
-use Nethead\Markup\Html\Tag;
+use Nethead\Forms\Abstracts\Input;
 
 class BootstrapInputMutator {
-    public function __invoke(Tag $input)
+    public function __invoke(Input $input)
     {
-        $input->appendToAttribute('class', 'form-control');
+        $tag = $input->getMutableElement();
+
+        $tag->appendToAttribute('class', 'form-control');
 
         return $input;
     }
