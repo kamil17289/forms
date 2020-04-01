@@ -2,10 +2,10 @@
 
 namespace Nethead\Forms\Integrations\Bootstrap;
 
-use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Contracts\Mutable;
 
 class BootstrapInputMutator {
-    public function __invoke(Input $input)
+    public function __invoke(Mutable $input)
     {
         $tag = $input->getMutableElement();
 

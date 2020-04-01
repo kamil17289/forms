@@ -24,11 +24,9 @@ class Button extends Control {
      */
     public function __construct(string $name, string $text)
     {
-        parent::__construct($name);
-
         $this->text = $text;
 
-        $this->setHtml(static::createHtml());
+        parent::__construct($name);
     }
 
     /**

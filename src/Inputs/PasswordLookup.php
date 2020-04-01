@@ -71,7 +71,7 @@ class PasswordLookup extends Password {
     /**
      *
      */
-    public function getMutableElement()
+    public function getMutableElement() : Tag
     {
         return $this->getHtml()
             ->getElement('markup')

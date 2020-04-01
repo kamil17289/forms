@@ -6,15 +6,17 @@ use Nethead\Forms\Commons\HasLabel;
 use Nethead\Forms\Commons\HasValue;
 use Nethead\Forms\Commons\IsMutable;
 use Nethead\Forms\Commons\ShowsMessages;
+use Nethead\Forms\Contracts\Mutable;
 use Nethead\Forms\Structures\Block;
 use Nethead\Forms\Structures\Messages;
 use Nethead\Markup\Commons\RendersIcons;
+use Nethead\Markup\Html\Tag;
 
 /**
  * Class Input
  * @package Nethead\Forms\Abstracts
  */
-abstract class Input extends Element {
+abstract class Input extends Element implements Mutable {
     use HasValue, RendersIcons, ShowsMessages, HasLabel, IsMutable;
 
     /**
@@ -74,7 +76,7 @@ abstract class Input extends Element {
     /**
      * @return Structure|\Nethead\Markup\Html\Tag|null
      */
-    public function getMutableElement()
+    public function getMutableElement() : Tag
     {
         return $this->getHtml()
             ->getElement('input');

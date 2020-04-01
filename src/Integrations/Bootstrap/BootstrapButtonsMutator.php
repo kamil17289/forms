@@ -2,13 +2,20 @@
 
 namespace Nethead\Forms\Integrations\Bootstrap;
 
-use Nethead\Forms\Abstracts\Control;
+use Nethead\Forms\Contracts\Mutable;
 
 class BootstrapButtonsMutator {
-    public function __invoke(Control $control, string $variant = 'primary')
+    public $variant = 'primary';
+
+    public function __construct(string $variant = 'primary')
     {
-        $html = $control->getHtml();
+        $this->variant = $variant;
+    }
 
+    public function __invoke(Mutable $control)
+    {
+        $button = $control->getMutableElement();
 
+        $button->appendToAttribute('class', 'btn btn-' . $this->variant);
     }
 }

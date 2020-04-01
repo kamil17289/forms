@@ -11,6 +11,17 @@ use Nethead\Markup\Html\Input;
  */
 class Submit extends Button {
     /**
+     * Submit constructor.
+     * @param string $name
+     * @param string $text
+     * @throws \Exception
+     */
+    public function __construct(string $name, string $text)
+    {
+        parent::__construct($name, $text);
+    }
+
+    /**
      * @return Markup
      */
     protected function createHtml()

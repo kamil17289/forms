@@ -3,13 +3,15 @@
 namespace Nethead\Forms\Abstracts;
 
 use Nethead\Forms\Commons\IsMutable;
+use Nethead\Forms\Contracts\Mutable;
 use Nethead\Markup\Commons\RendersIcons;
+use Nethead\Markup\Html\Tag;
 
 /**
  * Class Control
  * @package Nethead\Forms\Abstracts
  */
-abstract class Control extends Element {
+abstract class Control extends Element implements Mutable {
     use RendersIcons, IsMutable;
 
     /**
@@ -20,9 +22,16 @@ abstract class Control extends Element {
     public function __construct(string $name)
     {
         parent::__construct($name);
+
+        $this->setHtml(static::createHtml());
+
+        $this->mutate();
     }
 
-    public function getMutableElement()
+    /**
+     * @return Tag
+     */
+    public function getMutableElement() : Tag
     {
         return $this->getHtml()
             ->getElement('button');
@@ -35,4 +44,9 @@ abstract class Control extends Element {
     {
         return $this->getHtml()->render();
     }
+
+    /**
+     * @return mixed
+     */
+    abstract protected function createHtml();
 }
