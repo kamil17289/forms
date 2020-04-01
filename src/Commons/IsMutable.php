@@ -26,13 +26,11 @@ trait IsMutable {
      */
     public function mutate()
     {
-        $className = get_class($this);
-
-        if (isset(self::$mutators[$className]) && is_array(self::$mutators[$className])) {
-            $mutators = self::$mutators[$className];
-
-            foreach($mutators as $mutator) {
-                call_user_func($mutator, $this);
+        foreach(self::$mutators as $className => $mutators) {
+            if (is_a($this, $className)) {
+                foreach($mutators as $mutator) {
+                    call_user_func($mutator, $this);
+                }
             }
         }
     }
