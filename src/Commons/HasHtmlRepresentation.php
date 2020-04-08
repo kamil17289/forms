@@ -3,6 +3,7 @@
 namespace Nethead\Forms\Commons;
 
 use Nethead\Forms\Abstracts\Structure;
+use Nethead\Markup\Html\Tag;
 
 /**
  * Trait HasHtmlRepresentation
@@ -31,15 +32,33 @@ trait HasHtmlRepresentation {
     }
 
     /**
-     * @param string $name
+     * @param string $name (if structure is nested, you can use the dot syntax,
+     * e.g. 'markup.input')
      * @param array $attributes
      */
     public function updateHtmlRepresentation(string $name, array $attributes = [])
     {
-        if ($this->getHtml()->hasElement($name)) {
-            $this->getHtml()
-                ->getElement($name)
-                ->mergeHtmlAttributes($attributes);
+        $html = $this->getHtml();
+
+        if (strpos($name, '.') !== false) {
+            $structure = explode('.', $name);
+
+            $element = array_shift($structure);
+
+            while ($html->hasElement($element)) {
+                $html = $html->getElement($element);
+
+                if (empty($structure)) break;
+
+                $element = array_shift($structure);
+            }
+        }
+        else {
+            $html = $html->getElement($name);
+        }
+
+        if (is_a($html, Tag::class)) {
+            $html->mergeHtmlAttributes($attributes);
         }
     }
 }

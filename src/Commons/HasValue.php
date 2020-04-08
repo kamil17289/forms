@@ -28,6 +28,14 @@ trait HasValue {
         else {
             $this->currentValue = $value;
         }
+
+        if (method_exists($this, 'updateHtmlRepresentation')) {
+            if ($this->getHtml() && $this->getHtml()->hasElement('input')) {
+                $this->updateHtmlRepresentation('input', [
+                    'value' => $value
+                ]);
+            }
+        }
     }
 
     /**

@@ -77,4 +77,16 @@ class PasswordLookup extends Password {
             ->getElement('markup')
             ->getElement('input');
     }
+
+    /**
+     * @param string $value
+     */
+    public function forceValue(string $value)
+    {
+        $this->setValue($value);
+
+        $this->updateHtmlRepresentation('markup.input', [
+            'value' => $value
+        ]);
+    }
 }
