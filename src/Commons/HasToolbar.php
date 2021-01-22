@@ -2,6 +2,7 @@
 
 namespace Nethead\Forms\Commons;
 
+use Nethead\Forms\Abstracts\Control;
 use Nethead\Forms\Structures\Toolbar;
 
 /**
@@ -12,7 +13,7 @@ trait HasToolbar {
     /**
      * @return array
      */
-    public function getButtons()
+    public function getButtons(): array
     {
         return [
             'submit',
@@ -23,7 +24,7 @@ trait HasToolbar {
     /**
      * @return string
      */
-    public function renderToolbar()
+    public function renderToolbar(): string
     {
         $toolbar = new Toolbar($this->getFormId() . '-toolbar');
 
@@ -33,7 +34,7 @@ trait HasToolbar {
             if ($button) {
                 $button->getHtml()
                     ->getElement('button')
-                    ->setHtmlAttribute('form', $this->getFormId());
+                    ->attrs()->set('form', $this->getFormId());
 
                 $toolbar->addElement($type, $button);
             }
@@ -44,9 +45,9 @@ trait HasToolbar {
 
     /**
      * @param string $type
-     * @return bool
+     * @return Control|null
      */
-    public function renderButton(string $type)
+    public function renderButton(string $type): ?Control
     {
         $buttons = $this->getButtons();
 
@@ -58,6 +59,6 @@ trait HasToolbar {
             }
         }
 
-        return false;
+        return null;
     }
 }

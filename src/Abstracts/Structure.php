@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Abstracts;
 
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Class Structure
@@ -35,7 +35,7 @@ abstract class Structure {
             if (method_exists($this, 'wrapperAttributes')) {
                 $wrapperAttributes = static::wrapperAttributes();
 
-                $this->wrapper->setHtmlAttributes($wrapperAttributes);
+                $this->wrapper->attrs()->setMany($wrapperAttributes);
             }
         }
     }
@@ -51,7 +51,7 @@ abstract class Structure {
     /**
      * @return Tag|null
      */
-    public function getWrapper()
+    public function getWrapper(): ?Tag
     {
         return $this->wrapper;
     }
@@ -105,7 +105,7 @@ abstract class Structure {
      * @param string $name
      * @return bool
      */
-    public function hasElement(string $name)
+    public function hasElement(string $name): bool
     {
         return array_key_exists($name, $this->elements);
     }
@@ -113,7 +113,7 @@ abstract class Structure {
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
@@ -124,7 +124,7 @@ abstract class Structure {
     public function render() : string
     {
         if (! is_null($this->wrapper)) {
-            $this->wrapper->setContents($this->getElements());
+            $this->wrapper->setChildren($this->getElements());
 
             return (string) $this->wrapper;
         }

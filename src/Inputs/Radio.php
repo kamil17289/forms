@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class Radio
@@ -33,14 +33,14 @@ class Radio extends FormInput {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         $input = new HtmlInput('radio', $this->getName(), $this->getDefaultValue(), [
             'id' => $this->getID()
         ]);
 
         if ($this->getValue() == $this->selected) {
-            $input->setHtmlAttribute('checked', true);
+            $input->checked();
         }
 
         return $input;

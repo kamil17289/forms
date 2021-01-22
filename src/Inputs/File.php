@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class File
@@ -23,11 +23,11 @@ class File extends Text {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         $input = parent::getInputElement();
 
-        $input->removeHtmlAttribute('value');
+        $input->attrs()->remove('value');
 
         return $input;
     }

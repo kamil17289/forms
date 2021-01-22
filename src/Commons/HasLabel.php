@@ -2,7 +2,8 @@
 
 namespace Nethead\Forms\Commons;
 
-use Nethead\Markup\Html\Label;
+use Nethead\Markup\Tags\Form;
+use Nethead\Markup\Tags\Label;
 
 /**
  * Trait HasLabel
@@ -10,7 +11,7 @@ use Nethead\Markup\Html\Label;
  */
 trait HasLabel {
     /**
-     * @var null
+     * @var Label|null
      */
     protected $label = null;
 
@@ -18,17 +19,21 @@ trait HasLabel {
      * @param mixed $text
      * @param string $for
      * @param array $attributes
-     * @param string $form
+     * @param Form|null $form
      */
-    public function setLabel($text, string $for, array $attributes = [], $form = '')
+    public function setLabel($text, string $for, array $attributes = [], Form $form = null)
     {
-        $this->label = new Label($for, $text, $attributes, $form);
+        $this->label = new Label($for, $text, $attributes);
+
+        if ($form) {
+            $this->label->bindForm($form);
+        }
     }
 
     /**
-     * @return null
+     * @return Label|null
      */
-    public function getLabel()
+    public function getLabel(): ?Label
     {
         return $this->label;
     }

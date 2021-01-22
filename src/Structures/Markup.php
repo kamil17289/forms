@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Structures;
 
 use Nethead\Forms\Abstracts\Structure;
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Class Markup
@@ -24,7 +24,7 @@ class Markup extends Structure {
             $wrapper = new Tag($wrapperTag);
 
             if (! empty($wrapperAttributes)) {
-                $wrapper->setHtmlAttributes($wrapperAttributes);
+                $wrapper->attrs()->setMany($wrapperAttributes);
             }
 
             $this->wrapper = $wrapper;

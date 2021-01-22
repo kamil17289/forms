@@ -9,7 +9,7 @@ class BootstrapInputMutator {
     {
         $tag = $input->getMutableElement();
 
-        $tag->appendToAttribute('class', 'form-control');
+        $tag->classList()->add('form-control');
 
         return $input;
     }

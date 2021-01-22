@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 class Password extends Text {
     /**
@@ -19,11 +19,11 @@ class Password extends Text {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         $input = parent::getInputElement();
 
-        $input->setHtmlAttribute('value', '');
+        $input->attrs()->set('value', '');
 
         return $input;
     }

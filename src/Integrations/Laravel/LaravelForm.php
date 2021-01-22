@@ -37,7 +37,7 @@ abstract class LaravelForm extends Form
 
             $this->getHtml()
                 ->getElement('form')
-                ->setHtmlAttribute('method', $this->getMethod());
+                ->attrs()->set('method', $this->getMethod());
         }
 
         $this->addCSRFToken();
@@ -57,10 +57,12 @@ abstract class LaravelForm extends Form
      */
     protected function addCSRFToken()
     {
-        $token = csrf_token();
+        if (function_exists('csrf_token')) {
+            $token = csrf_token();
 
-        if ($token) {
-            $this->addInput(new Hidden('_token', $token));
+            if ($token) {
+                $this->addInput(new Hidden('_token', $token));
+            }
         }
     }
 }

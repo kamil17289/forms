@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Commons;
 
 use Nethead\Forms\Abstracts\Structure;
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Trait HasHtmlRepresentation
@@ -26,7 +26,7 @@ trait HasHtmlRepresentation {
     /**
      * @return Structure|null
      */
-    public function getHtml()
+    public function getHtml(): ?Structure
     {
         return $this->html;
     }
@@ -58,7 +58,7 @@ trait HasHtmlRepresentation {
         }
 
         if (is_a($html, Tag::class)) {
-            $html->mergeHtmlAttributes($attributes);
+            $html->attrs()->setMany($attributes);
         }
     }
 }

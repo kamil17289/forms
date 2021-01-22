@@ -4,7 +4,7 @@ namespace Nethead\Forms\Controls;
 
 use Nethead\Forms\Abstracts\Control;
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\Button as HtmlButton;
+use Nethead\Markup\Tags\Button as HtmlButton;
 
 /**
  * Class Button
@@ -32,10 +32,14 @@ class Button extends Control {
     /**
      * @return Markup
      */
-    protected function createHtml()
+    protected function createHtml(): Markup
     {
+        $button = new HtmlButton();
+
+        $button->setChildren([$this->text]);
+
         return new Markup([
-            'button' => new HtmlButton('button', '', [], $this->text)
+            'button' => $button
         ]);
     }
 }

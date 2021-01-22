@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class BooleanCheckbox
@@ -30,7 +30,7 @@ class BooleanCheckbox extends FormInput {
      * @return HtmlInput
      * @throws \Exception
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         $input = new HtmlInput('checkbox', $this->getName(), 1, [
             'id' => $this->getID(),
@@ -38,7 +38,7 @@ class BooleanCheckbox extends FormInput {
 
         // don't use === here as the boolean value must be changed to integer
         if ($this->getValue() == 1) {
-            $input->setHtmlAttribute('checked', true);
+            $input->checked();
         }
 
         return $input;

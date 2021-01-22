@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class Checkbox
@@ -12,11 +12,11 @@ class Checkbox extends Radio {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         $input = parent::getInputElement();
 
-        $input->setHtmlAttribute('type', 'checkbox');
+        $input->attrs()->set('type', 'checkbox');
 
         return $input;
     }

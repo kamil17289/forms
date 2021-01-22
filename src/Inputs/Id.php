@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class Id
@@ -12,12 +12,11 @@ class Id extends Integer {
     /**
      * @return HtmlInput
      */
-    public function getInputElement()
+    public function getInputElement(): HtmlInput
     {
         $input = parent::getInputElement();
 
-        $input->setHtmlAttribute('min', 1);
-        $input->setHtmlAttribute('readonly', true);
+        $input->min(1)->readonly(true);
 
         return $input;
     }

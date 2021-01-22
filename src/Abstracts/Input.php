@@ -9,15 +9,15 @@ use Nethead\Forms\Commons\ShowsMessages;
 use Nethead\Forms\Contracts\Mutable;
 use Nethead\Forms\Structures\Block;
 use Nethead\Forms\Structures\Messages;
-use Nethead\Markup\Commons\RendersIcons;
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
+use Exception;
 
 /**
  * Class Input
  * @package Nethead\Forms\Abstracts
  */
 abstract class Input extends Element implements Mutable {
-    use HasValue, RendersIcons, ShowsMessages, HasLabel, IsMutable;
+    use HasValue, ShowsMessages, HasLabel, IsMutable;
 
     /**
      * Input constructor.
@@ -25,7 +25,7 @@ abstract class Input extends Element implements Mutable {
      * @param string $label
      * @param null $currentValue
      * @param string $defaultValue
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct(string $name, string $label, $currentValue = null, $defaultValue = '')
     {
@@ -74,7 +74,7 @@ abstract class Input extends Element implements Mutable {
     }
 
     /**
-     * @return Structure|\Nethead\Markup\Html\Tag|null
+     * @return Structure|Tag|null
      */
     public function getMutableElement() : Tag
     {
@@ -84,9 +84,9 @@ abstract class Input extends Element implements Mutable {
 
     /**
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
-    public function render()
+    public function render(): string
     {
         return (string) $this->getHtml()->render();
     }

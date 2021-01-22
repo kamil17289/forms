@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Contracts;
 
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Interface Mutable

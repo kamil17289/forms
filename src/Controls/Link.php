@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Controls;
 
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\A;
+use Nethead\Markup\Tags\A;
 
 /**
  * Class Link
@@ -32,10 +32,10 @@ class Link extends Button {
     /**
      * @return Markup
      */
-    protected function createHtml()
+    protected function createHtml(): Markup
     {
         return new Markup([
-            'button' => new A($this->href, $this->text)
+            'button' => new A($this->href, [$this->text])
         ]);
     }
 }

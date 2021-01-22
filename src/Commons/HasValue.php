@@ -39,7 +39,7 @@ trait HasValue {
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getValue()
     {
@@ -47,7 +47,7 @@ trait HasValue {
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getDefaultValue()
     {
@@ -55,7 +55,7 @@ trait HasValue {
     }
 
     /**
-     * @param string $defaultValue
+     * @param mixed $defaultValue
      */
     public function setDefaultValue($defaultValue) : void
     {

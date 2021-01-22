@@ -6,7 +6,7 @@ use Nethead\Forms\Abstracts\Element;
 use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\Form as HtmlForm;
+use Nethead\Markup\Tags\Form as HtmlForm;
 
 /**
  * Class Form
@@ -89,7 +89,7 @@ abstract class Form {
 
         $this->formId = $this->getTitle(true) . '-' . Str::random(5);
 
-        $formTag->setHtmlAttribute('id', $this->getFormId());
+        $formTag->attrs()->set('id', $this->getFormId());
 
         $this->setHtml(new Markup([
             'form' => $formTag
@@ -135,7 +135,7 @@ abstract class Form {
      * Get the method used to sent data via HTTP
      * @return string
      */
-    public function getMethod()
+    public function getMethod(): string
     {
         return $this->method;
     }
@@ -160,7 +160,7 @@ abstract class Form {
      * @param bool $slugified
      * @return string
      */
-    public function getTitle($slugified = false)
+    public function getTitle($slugified = false): string
     {
         if ($slugified) {
             return $this->slug;
@@ -193,7 +193,7 @@ abstract class Form {
     /**
      * @return array
      */
-    public function getAllInputs()
+    public function getAllInputs(): array
     {
         return $this->inputs;
     }
@@ -201,7 +201,7 @@ abstract class Form {
     /**
      * @return array
      */
-    public function getInputNames()
+    public function getInputNames(): array
     {
         return array_keys($this->inputs);
     }
@@ -209,7 +209,7 @@ abstract class Form {
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         $array = [];
 
@@ -225,7 +225,7 @@ abstract class Form {
      * @return Form
      * @throws \Exception
      */
-    public static function createFromArray(array $data)
+    public static function createFromArray(array $data): Form
     {
         $form = new static();
 
@@ -251,11 +251,11 @@ abstract class Form {
     /**
      * @return string
      */
-    public function render() : string
+    public function render(): string
     {
         $this->getHtml()
             ->getElement('form')
-            ->setContents($this->getAllInputs());
+            ->setChildren($this->getAllInputs());
 
         return (string) $this->getHtml();
     }
@@ -263,7 +263,7 @@ abstract class Form {
     /**
      * @return string
      */
-    public function open() : string
+    public function open(): string
     {
         return $this->getHtml()
             ->getElement('form')
@@ -273,7 +273,7 @@ abstract class Form {
     /**
      * @return string
      */
-    public function close() : string
+    public function close(): string
     {
         return $this->getHtml()
             ->getElement('form')

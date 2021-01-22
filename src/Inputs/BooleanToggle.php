@@ -3,8 +3,8 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Html\Input as HtmlInput;
-use Nethead\Markup\Html\Label;
+use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Markup\Tags\Label;
 
 class BooleanToggle extends FormInput {
     /**
@@ -26,7 +26,7 @@ class BooleanToggle extends FormInput {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         return new HtmlInput('checkbox', $this->getName(), $this->getValue(), [
             'class' => 'toggle-switch'

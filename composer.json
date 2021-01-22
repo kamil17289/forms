@@ -9,8 +9,8 @@
     }
   ],
   "require": {
-    "php": "^7.1",
-    "nethead/markup": "^1.4"
+    "php": "^7.3",
+    "nethead/markup": "^2.0"
   },
   "autoload": {
     "psr-4": {

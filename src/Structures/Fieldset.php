@@ -8,7 +8,7 @@ class Fieldset extends Structure {
     /**
      * @return string
      */
-    public function wrapperTag()
+    public function wrapperTag(): string
     {
         return 'fieldset';
     }

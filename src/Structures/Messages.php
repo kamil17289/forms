@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Structures;
 
 use Nethead\Forms\Abstracts\Structure;
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Class FormGroup
@@ -28,7 +28,7 @@ class Messages extends Structure {
     /**
      * @return string
      */
-    public function wrapperTag()
+    public function wrapperTag(): string
     {
         return 'div';
     }
@@ -36,7 +36,7 @@ class Messages extends Structure {
     /**
      * @return array
      */
-    public function wrapperAttributes()
+    public function wrapperAttributes(): array
     {
         return [
             'class' => 'messages'

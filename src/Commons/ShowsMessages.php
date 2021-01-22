@@ -15,7 +15,7 @@ trait ShowsMessages {
     /**
      * @return array
      */
-    public function getAllMessages()
+    public function getAllMessages(): array
     {
         return $this->messages;
     }
@@ -24,7 +24,7 @@ trait ShowsMessages {
      * @param string $severity
      * @return array
      */
-    public function getMessagesBySeverity(string $severity)
+    public function getMessagesBySeverity(string $severity): array
     {
         $found = [];
 

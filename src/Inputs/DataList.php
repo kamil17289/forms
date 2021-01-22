@@ -3,8 +3,9 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Html\Input as HtmlInput;
-use Nethead\Markup\Html\Option;
+use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Markup\Tags\Option;
+use Nethead\Markup\Tags\Datalist as HtmlDatalist;
 
 /**
  * Class DataList
@@ -43,7 +44,7 @@ class DataList extends FormInput {
     /**
      * @return HtmlInput
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlInput
     {
         return new HtmlInput('text', $this->getName(), $this->getValue(), [
             'id' => $this->getID(),
@@ -52,14 +53,14 @@ class DataList extends FormInput {
     }
 
     /**
-     * @return \Nethead\Markup\Html\Datalist
+     * @return HtmlDatalist
      */
-    protected function getDataList()
+    protected function getDataList(): HtmlDatalist
     {
         $options = array_map(function ($option) {
             return new Option($option, '');
         }, $this->options);
 
-        return new \Nethead\Markup\Html\Datalist($this->getID() . '_list', [], $options);
+        return new HtmlDatalist($this->getID() . '_list', [], $options);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Textarea as HtmlTextArea;
+use Nethead\Markup\Tags\Textarea as HtmlTextArea;
 use Nethead\Forms\Abstracts\Input as FormInput;
 
 /**
@@ -26,7 +26,7 @@ class TextArea extends FormInput {
     /**
      * @return HtmlTextArea
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlTextArea
     {
         return new HtmlTextArea($this->getName(), ['id' => $this->getID()], $this->getValue());
     }

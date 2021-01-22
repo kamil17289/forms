@@ -4,6 +4,7 @@ namespace Nethead\Forms\Abstracts;
 
 use Nethead\Forms\Commons\HasHtmlRepresentation;
 use Nethead\Forms\Helpers\Str;
+use Exception;
 
 /**
  * Class Element
@@ -25,7 +26,7 @@ abstract class Element {
     /**
      * Element constructor.
      * @param string $name
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct(string $name)
     {
@@ -45,7 +46,7 @@ abstract class Element {
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -53,14 +54,14 @@ abstract class Element {
     /**
      * @return string
      */
-    protected function generateID()
+    protected function generateID(): string
     {
         $id = $this->getName() . '-';
 
         try {
             $random = Str::random(5);
         }
-        catch (\Exception $e) {
+        catch (Exception $e) {
             $random = substr(uniqid(), 0, 5);
         }
 
@@ -78,7 +79,7 @@ abstract class Element {
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
@@ -86,5 +87,5 @@ abstract class Element {
     /**
      * @return string
      */
-    abstract public function render();
+    abstract public function render(): string;
 }

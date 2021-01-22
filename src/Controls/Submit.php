@@ -3,7 +3,7 @@
 namespace Nethead\Forms\Controls;
 
 use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Html\Input;
+use Nethead\Markup\Tags\Input;
 
 /**
  * Class Submit
@@ -24,10 +24,10 @@ class Submit extends Button {
     /**
      * @return Markup
      */
-    protected function createHtml()
+    protected function createHtml(): Markup
     {
         return new Markup([
-            'button' => new Input('submit', $this->getName(), $this->text)
+            'button' => new Input('submit', $this->getName(), [$this->text])
         ]);
     }
 }

@@ -3,9 +3,9 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Html\Optgroup;
-use Nethead\Markup\Html\Option;
-use Nethead\Markup\Html\Select as HtmlSelect;
+use Nethead\Markup\Tags\Optgroup;
+use Nethead\Markup\Tags\Option;
+use Nethead\Markup\Tags\Select as HtmlSelect;
 
 /**
  * Class Select
@@ -60,7 +60,7 @@ class Select extends FormInput {
      * @param array $options
      * @return Optgroup
      */
-    protected function createOptGroup($text, array $options)
+    protected function createOptGroup($text, array $options): Optgroup
     {
         $opts = [];
 
@@ -81,7 +81,7 @@ class Select extends FormInput {
      * @param $text
      * @return Option
      */
-    protected function createOption($value, $text)
+    protected function createOption($value, $text): Option
     {
         return new Option($value, $text);
     }
@@ -89,12 +89,15 @@ class Select extends FormInput {
     /**
      * @return HtmlSelect
      */
-    protected function getInputElement()
+    protected function getInputElement(): HtmlSelect
     {
         return new HtmlSelect($this->getName(), $this->options);
     }
 
-    public function render()
+    /**
+     * @return string
+     */
+    public function render(): string
     {
         return (string) $this->getHtml()->render();
     }

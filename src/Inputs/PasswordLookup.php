@@ -5,19 +5,14 @@ namespace Nethead\Forms\Inputs;
 use Nethead\Forms\Abstracts\Input;
 use Nethead\Forms\Structures\Markup;
 use Nethead\Forms\Structures\Messages;
-use Nethead\Markup\Html\Button;
-use Nethead\Markup\Html\Tag;
+use Nethead\Markup\Tags\Button;
+use Nethead\Markup\Foundation\Tag;
 
 /**
  * Class PasswordLookup
  * @package Nethead\Forms\Inputs
  */
 class PasswordLookup extends Password {
-    /**
-     * @var string
-     */
-    protected $lookupIcon = 'fas fa-eye';
-
     /**
      * PasswordLookup constructor.
      * @param string $name
@@ -49,17 +44,9 @@ class PasswordLookup extends Password {
     }
 
     /**
-     * @param string $icon
-     */
-    public function setLookupIcon(string $icon)
-    {
-        $this->lookupIcon = $icon;
-    }
-
-    /**
      * @return Tag
      */
-    protected function getLookupButton()
+    protected function getLookupButton(): Tag
     {
         return new Tag('span', ['class' => 'input-group-btn'], [
             new Button('button', '', ['class' => 'btn btn-secondary password-lookup'], [

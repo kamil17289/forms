@@ -19,7 +19,7 @@ class Toolbar extends Structure {
         parent::__construct($elements);
 
         $this->getWrapper()
-            ->setHtmlAttribute('id', $id);
+            ->attrs()->set('id', $id);
     }
 
     /**

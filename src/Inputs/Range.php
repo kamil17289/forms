@@ -2,7 +2,7 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Html\Input as HtmlInput;
+use Nethead\Markup\Tags\Input as HtmlInput;
 
 /**
  * Class Range
@@ -48,14 +48,11 @@ class Range extends Text {
     /**
      * @return HtmlInput
      */
-    public function getInputElement()
+    public function getInputElement(): HtmlInput
     {
         $input = parent::getInputElement();
 
-        $input->mergeHtmlAttributes([
-            'min' => $this->min,
-            'max' => $this->max,
-        ]);
+        $input->min($this->min)->max($this->max);
 
         return $input;
     }

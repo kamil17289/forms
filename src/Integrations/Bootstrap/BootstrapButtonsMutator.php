@@ -16,6 +16,9 @@ class BootstrapButtonsMutator {
     {
         $button = $control->getMutableElement();
 
-        $button->appendToAttribute('class', 'btn btn-' . $this->variant);
+        $button->classList()->add([
+            'btn',
+            'btn-' . $this->variant
+        ]);
     }
 }
