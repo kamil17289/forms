@@ -2,16 +2,13 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Tags\Optgroup;
-use Nethead\Markup\Tags\Option;
-use Nethead\Markup\Tags\Select as HtmlSelect;
+use Nethead\Forms\Abstracts\DataField;
 
 /**
  * Class Select
  * @package Nethead\Forms\Inputs
  */
-class Select extends FormInput {
+class Select extends DataField {
     /**
      * @var array
      */
@@ -20,85 +17,36 @@ class Select extends FormInput {
     /**
      * Select constructor.
      * @param string $name
-     * @param string $label
-     * @param array $options
      * @param null $currentValue
      * @param string $defaultValue
-     * @throws \Exception
+     * @param string|null $label
+     * @param array $options
+     * @param string $id
      */
-    public function __construct(string $name, string $label, array $options = [], $currentValue = null, $defaultValue = '')
+    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, array $options = [], string $id = '')
     {
+        parent::__construct($name, $currentValue, $defaultValue, $label, $id);
+
         $this->setOptions($options);
-
-        parent::__construct($name, $label, $currentValue, $defaultValue);
     }
 
     /**
      * @param array $options
      */
-    protected function setOptions(array $options = [])
+    public function setOptions(array $options = []): void
     {
-        if (empty($options)) {
-            if (method_exists($this, 'getDefaultOptions')) {
-                $options = $this->getDefaultOptions();
-            }
+        if (empty($options) && method_exists($this, 'getDefaultOptions')) {
+            $this->options = $this->getDefaultOptions();
         }
 
-        foreach($options as $value => $label) {
-            if (is_array($label)) {
-                // we have an optgroup
-                $this->options[] = $this->createOptGroup($value, $label);
-            }
-            else {
-                $this->options[] = $this->createOption($value, $label);
-            }
-        }
+        $this->options = $options;
     }
 
     /**
-     * @param $text
-     * @param array $options
-     * @return Optgroup
+     * @return array
      */
-    protected function createOptGroup($text, array $options): Optgroup
+    public function getOptions(): array
     {
-        $opts = [];
-
-        foreach($options as $value => $label) {
-            if (is_array($label)) {
-                $opts[] = call_user_func([$this, 'createOptGroup'], $value, $label);
-            }
-            else {
-                $opts[] = $this->createOption($value, $label);
-            }
-        }
-
-        return new Optgroup($text, [], $opts);
-    }
-
-    /**
-     * @param $value
-     * @param $text
-     * @return Option
-     */
-    protected function createOption($value, $text): Option
-    {
-        return new Option($value, $text);
-    }
-
-    /**
-     * @return HtmlSelect
-     */
-    protected function getInputElement(): HtmlSelect
-    {
-        return new HtmlSelect($this->getName(), $this->options);
-    }
-
-    /**
-     * @return string
-     */
-    public function render(): string
-    {
-        return (string) $this->getHtml()->render();
+        return $this->options;
     }
 }

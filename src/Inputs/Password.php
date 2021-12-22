@@ -2,45 +2,42 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
-class Password extends Text {
+/**
+ * Class Password
+ * @package Nethead\Forms\Inputs
+ */
+class Password extends Input {
     /**
      * Password constructor.
      * @param string $name
-     * @param string $label
-     * @throws \Exception
+     * @param string|null $label
+     * @param string|null $forceValue
+     * @param string $id
      */
-    public function __construct(string $name, string $label)
+    public function __construct(string $name, string $label = null, string $forceValue = null, string $id = '')
     {
-        parent::__construct($name, $label, '', '');
+        parent::__construct($name, '', '', $label, $id);
+
+        $this->forceValue($forceValue);
     }
 
     /**
-     * @return HtmlInput
+     * @param string|null $forceValue
      */
-    protected function getInputElement(): HtmlInput
+    public function forceValue(string $forceValue = null)
     {
-        $input = parent::getInputElement();
-
-        $input->attrs()->set('value', '');
-
-        return $input;
+        if (is_string($forceValue) && ! empty($forceValue)) {
+            $this->setValue($forceValue);
+        }
     }
 
     /**
      * @return string
      */
-    protected function getInputType(): string
+    public function getInputType(): string
     {
         return 'password';
-    }
-
-    /**
-     * @param string $value
-     */
-    public function forceValue(string $value)
-    {
-        $this->setValue($value);
     }
 }

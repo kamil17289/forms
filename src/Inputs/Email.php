@@ -2,15 +2,17 @@
 
 namespace Nethead\Forms\Inputs;
 
+use Nethead\Forms\Abstracts\Input;
+
 /**
  * Class Email
  * @package Nethead\Forms\Inputs
  */
-class Email extends Text {
+class Email extends Input {
     /**
      * @return string
      */
-    protected function getInputType(): string
+    public function getInputType(): string
     {
         return 'email';
     }

@@ -2,42 +2,41 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
 /**
  * Class Text
  * @package Nethead\Forms\Inputs
  */
-class Text extends FormInput {
+class Text extends Input {
     /**
-     * Text constructor.
-     * @param string $name
-     * @param string $label
-     * @param string|null $currentValue
-     * @param string $defaultValue
-     * @throws \Exception
+     * @var int
      */
-    public function __construct(string $name, string $label, string $currentValue = '', string $defaultValue = '')
-    {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
-    }
+    protected $size = 30;
 
     /**
      * @return string
      */
-    protected function getInputType() : string
+    public function getInputType(): string
     {
         return 'text';
     }
 
     /**
-     * @return HtmlInput
+     * @param int $size
      */
-    protected function getInputElement(): HtmlInput
+    public function setSize(int $size)
     {
-        return new HtmlInput($this->getInputType(), $this->getName(), $this->getValue(), [
-            'id' => $this->getID()
-        ]);
+        if ($size > 0) {
+            $this->size = $size;
+        }
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize(): int
+    {
+        return $this->size;
     }
 }

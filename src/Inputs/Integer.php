@@ -2,13 +2,11 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
-
 /**
  * Class Integer
  * @package Nethead\Forms\Inputs
  */
-class Integer extends Text {
+class Integer extends Number {
     /**
      * @var int
      */
@@ -17,15 +15,15 @@ class Integer extends Text {
     /**
      * Integer constructor.
      * @param string $name
-     * @param string $label
      * @param int|null $currentValue
-     * @param int $step
      * @param int $defaultValue
-     * @throws \Exception
+     * @param string|null $label
+     * @param int $step
+     * @param string $id
      */
-    public function __construct(string $name, string $label, int $currentValue = null, int $step = 1, int $defaultValue = 0)
+    public function __construct(string $name, int $currentValue = null, int $defaultValue = 0, string $label = null, int $step = 1, string $id = '')
     {
-        parent::__construct($name, $label, (string) $currentValue, $defaultValue);
+        parent::__construct($name, $currentValue, $defaultValue, $label, $id);
 
         $this->step = $step;
     }
@@ -39,22 +37,10 @@ class Integer extends Text {
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getInputType() : string
+    public function getStep(): int
     {
-        return 'number';
-    }
-
-    /**
-     * @return HtmlInput
-     */
-    public function getInputElement(): HtmlInput
-    {
-        $input = parent::getInputElement();
-
-        $input->step($this->step);
-
-        return $input;
+        return $this->step;
     }
 }

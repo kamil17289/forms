@@ -2,22 +2,22 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
-
 /**
  * Class Id
  * @package Nethead\Forms\Inputs
  */
 class Id extends Integer {
     /**
-     * @return HtmlInput
+     * Id constructor.
+     * @param string $name
+     * @param int|null $currentValue
+     * @param int $defaultValue
+     * @param string|null $label
+     * @param int $step
+     * @param string $id
      */
-    public function getInputElement(): HtmlInput
+    public function __construct(string $name, int $currentValue = null, int $defaultValue = 1, string $label = null, int $step = 1, string $id = '')
     {
-        $input = parent::getInputElement();
-
-        $input->min(1)->readonly(true);
-
-        return $input;
+        parent::__construct($name, $currentValue, $defaultValue, $label, $step, $id);
     }
 }

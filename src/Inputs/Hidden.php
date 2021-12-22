@@ -2,41 +2,29 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
 /**
- * Class Text
+ * Class Hidden
  * @package Nethead\Forms\Inputs
  */
-class Hidden extends FormInput {
+class Hidden extends Input {
     /**
-     * Text constructor.
+     * Hidden constructor.
      * @param string $name
-     * @param string|null $currentValue
-     * @param string $defaultValue
-     * @throws \Exception
+     * @param $value
+     * @param string $id
      */
-    public function __construct(string $name, string $currentValue = '', string $defaultValue = '')
+    public function __construct(string $name, $value, string $id = '')
     {
-        $this->name = $name;
-        $this->id = $this->generateID();
-        $this->setDefaultValue($defaultValue);
-        $this->setValue($currentValue);
-
-        $this->setHtml(new Markup([
-            'input' => $this->getInputElement(),
-        ]));
+        parent::__construct($name, $value, $value, $id);
     }
 
     /**
-     * @return HtmlInput
+     * @return string
      */
-    protected function getInputElement(): HtmlInput
+    public function getInputType(): string
     {
-        return new HtmlInput('hidden', $this->getName(), $this->getValue(), [
-            'id' => $this->getID()
-        ]);
+        return 'hidden';
     }
 }

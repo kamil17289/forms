@@ -2,44 +2,53 @@
 
 namespace Nethead\Forms\Controls;
 
-use Nethead\Forms\Abstracts\Control;
-use Nethead\Forms\Structures\Markup;
-use Nethead\Markup\Tags\Button as HtmlButton;
+use Nethead\Forms\Abstracts\Element;
 
 /**
  * Class Button
  * @package Nethead\Forms\Controls
  */
-class Button extends Control {
+class Button extends Element {
     /**
      * @var string
      */
-    protected $text;
+    protected $text = '';
+
+    /**
+     * @var string
+     */
+    protected $type = 'button';
 
     /**
      * Button constructor.
      * @param string $name
      * @param string $text
-     * @throws \Exception
+     * @param string $type
+     * @param string $id
      */
-    public function __construct(string $name, string $text)
+    public function __construct(string $name, string $text, string $type = 'button', string $id = '')
     {
-        $this->text = $text;
+        parent::__construct($name, $id);
 
-        parent::__construct($name);
+        $this->text = $text;
+        $this->type = $type;
     }
 
     /**
-     * @return Markup
+     * @return string
      */
-    protected function createHtml(): Markup
+    public function getText(): string
     {
-        $button = new HtmlButton();
-
-        $button->setChildren([$this->text]);
-
-        return new Markup([
-            'button' => $button
-        ]);
+        return $this->text;
     }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+
 }

@@ -2,20 +2,17 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Tags\Input as HtmlInput;
-use Nethead\Markup\Tags\Option;
-use Nethead\Markup\Tags\Datalist as HtmlDatalist;
+use Nethead\Forms\Abstracts\Input;
 
 /**
  * Class DataList
  * @package Nethead\Forms\Inputs
  */
-class DataList extends FormInput {
+class DataList extends Input {
     /**
      * @var string
      */
-    protected $listID = '';
+    protected $listId = '';
 
     /**
      * @var array
@@ -25,42 +22,42 @@ class DataList extends FormInput {
     /**
      * DataList constructor.
      * @param string $name
-     * @param string $label
-     * @param array $options
      * @param null $currentValue
      * @param string $defaultValue
-     * @throws \Exception
+     * @param string|null $label
+     * @param array $options
+     * @param string $id
      */
-    public function __construct(string $name, string $label, array $options, $currentValue = null, $defaultValue = '')
+    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, array $options = [], string $id = '')
     {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
+        parent::__construct($name, $currentValue, $defaultValue, $label, $id);
 
         $this->options = $options;
 
-        $this->getHtml()
-            ->addElement('datalist', $this->getDataList());
+        $this->listId = $this->getId() . '_list';
     }
 
     /**
-     * @return HtmlInput
+     * @return string
      */
-    protected function getInputElement(): HtmlInput
+    public function getInputType(): string
     {
-        return new HtmlInput('text', $this->getName(), $this->getValue(), [
-            'id' => $this->getID(),
-            'list' => $this->getID() . '_list'
-        ]);
+        return 'text';
     }
 
     /**
-     * @return HtmlDatalist
+     * @return array
      */
-    protected function getDataList(): HtmlDatalist
+    public function getOptions(): array
     {
-        $options = array_map(function ($option) {
-            return new Option($option, '');
-        }, $this->options);
+        return $this->options;
+    }
 
-        return new HtmlDatalist($this->getID() . '_list', [], $options);
+    /**
+     * @return string
+     */
+    public function getListId(): string
+    {
+        return $this->listId;
     }
 }

@@ -2,47 +2,46 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Forms\Abstracts\Input as FormInput;
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
 /**
  * Class Radio
  * @package Nethead\Forms\Inputs
  */
-class Radio extends FormInput {
+class Radio extends Input {
     /**
-     * @var string
+     * @var mixed|string
      */
-    protected $selected = '';
+    protected $selectedValue = '';
 
     /**
      * Radio constructor.
      * @param string $name
-     * @param string $label
-     * @param null $value
-     * @param string $selected
-     * @throws \Exception
+     * @param null $currentValue
+     * @param string $selectedValue
+     * @param string|null $label
+     * @param string $id
      */
-    public function __construct(string $name, string $label, $value = null, $selected = '')
+    public function __construct(string $name, $currentValue = null, $selectedValue = '', string $label = null, string $id = '')
     {
-        parent::__construct($name, $label, $value, $value);
+        parent::__construct($name, $currentValue, $currentValue, $label, $id);
 
-        $this->selected = $selected;
+        $this->selectedValue = $selectedValue;
     }
 
     /**
-     * @return HtmlInput
+     * @return mixed|string
      */
-    protected function getInputElement(): HtmlInput
+    public function getSelectedValue()
     {
-        $input = new HtmlInput('radio', $this->getName(), $this->getDefaultValue(), [
-            'id' => $this->getID()
-        ]);
+        return $this->selectedValue;
+    }
 
-        if ($this->getValue() == $this->selected) {
-            $input->checked();
-        }
-
-        return $input;
+    /**
+     * @return string
+     */
+    public function getInputType(): string
+    {
+        return 'radio';
     }
 }

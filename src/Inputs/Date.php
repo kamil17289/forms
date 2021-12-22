@@ -2,11 +2,13 @@
 
 namespace Nethead\Forms\Inputs;
 
+use Nethead\Forms\Abstracts\Input;
+
 /**
  * Class Date
  * @package Nethead\Forms\Inputs
  */
-class Date extends Text {
+class Date extends Input {
     /**
      * @return string
      */

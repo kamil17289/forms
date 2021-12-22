@@ -2,11 +2,13 @@
 
 namespace Nethead\Forms\Inputs;
 
+use Nethead\Forms\Abstracts\Input;
+
 /**
  * Class Search
  * @package Nethead\Forms\Inputs
  */
-class Search extends Text {
+class Search extends Input {
     /**
      * @return string
      */

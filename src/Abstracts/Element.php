@@ -2,48 +2,77 @@
 
 namespace Nethead\Forms\Abstracts;
 
-use Nethead\Forms\Commons\HasHtmlRepresentation;
-use Nethead\Forms\Helpers\Str;
-use Exception;
+use RuntimeException;
 
 /**
  * Class Element
+ * The most basic element of the form.
  * @package Nethead\Forms\Abstracts
  */
 abstract class Element {
-    use HasHtmlRepresentation;
-
     /**
+     * The name of the Element.
      * @var string
      */
-    public $name;
+    protected $name;
 
     /**
+     * Element ID that can be used to reference the element in HTML.
      * @var string
      */
-    public $id;
+    protected $id;
+
+    /**
+     * FormId which is assigned when the element is put inside the Form
+     * @var string
+     */
+    protected $formId = '';
 
     /**
      * Element constructor.
-     * @param string $name
-     * @throws Exception
+     * @param string $name Provide a name for a new element.
+     * @param string $id Provide HTML ID for the new element or it will be generated randomly.
      */
-    public function __construct(string $name)
+    public function __construct(string $name, string $id = '')
     {
-        $this->name = $name;
-
-        $this->id = $this->generateID();
+        $this->setName($name);
+        $this->setId($id);
     }
 
     /**
-     * @param string $name
+     * Set Form to which this element belongs.
+     * @param string $formId
      */
-    public function setName(string $name)
+    public function setFormId(string $formId): void
     {
+        $this->formId = $formId;
+    }
+
+    /**
+     * Get ID of the form to which this element belongs.
+     * @return string
+     */
+    public function getFormId(): string
+    {
+        return $this->formId;
+    }
+
+    /**
+     * Set the name for the element.
+     * @param string $name New name for the element.
+     * @throws RuntimeException When the provided name is empty.
+     */
+    public function setName(string $name): void
+    {
+        if (empty($name)) {
+            throw new RuntimeException('Form element name must not be empty!');
+        }
+
         $this->name = $name;
     }
 
     /**
+     * Get name of this element.
      * @return string
      */
     public function getName(): string
@@ -52,40 +81,33 @@ abstract class Element {
     }
 
     /**
-     * @return string
+     * Set or generate id for the element.
+     * @param string $id
      */
-    protected function generateID(): string
+    public function setId(string $id = ''): void
     {
-        $id = $this->getName() . '-';
-
-        try {
-            $random = Str::random(5);
-        }
-        catch (Exception $e) {
-            $random = substr(uniqid(), 0, 5);
+        if (empty($id)) {
+            $id = sprintf('%s_%s', $this->name, Element::randomId());
         }
 
-        return $id . $random;
+        $this->id = $id;
     }
 
     /**
+     * Get id of this element.
      * @return string
      */
-    public function getID() : string
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
+     * Generate simple id.
      * @return string
      */
-    public function __toString(): string
+    public static function randomId(): string
     {
-        return $this->render();
+        return substr(uniqid('', true), 9, 5);
     }
-
-    /**
-     * @return string
-     */
-    abstract public function render(): string;
 }

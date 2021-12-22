@@ -2,11 +2,13 @@
 
 namespace Nethead\Forms\Inputs;
 
+use Nethead\Forms\Abstracts\Input;
+
 /**
  * Class Color
  * @package Nethead\Forms\Inputs
  */
-class Color extends Text {
+class Color extends Input {
     /**
      * @return string
      */

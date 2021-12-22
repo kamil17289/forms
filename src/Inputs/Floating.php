@@ -2,30 +2,28 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
-
 /**
- * Class Integer
+ * Class Floating
  * @package Nethead\Forms\Inputs
  */
-class Floating extends Text {
+class Floating extends Number {
     /**
-     * @var int
+     * @var float
      */
     protected $step = 0.1;
 
     /**
-     * Integer constructor.
+     * Floating constructor.
      * @param string $name
-     * @param string $label
-     * @param float|null $currentValue
+     * @param null $currentValue
+     * @param string $defaultValue
+     * @param string|null $label
      * @param float $step
-     * @param float $defaultValue
-     * @throws \Exception
+     * @param string $id
      */
-    public function __construct(string $name, string $label, float $currentValue = null, float $step = 0.1, float $defaultValue = 0)
+    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, float $step = 0.1, string $id = '')
     {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
+        parent::__construct($name, $currentValue, $defaultValue, $label, $id);
 
         $this->step = $step;
     }
@@ -39,22 +37,10 @@ class Floating extends Text {
     }
 
     /**
-     * @return string
+     * @return float
      */
-    public function getInputType(): string
+    public function getStep(): float
     {
-        return 'number';
-    }
-
-    /**
-     * @return HtmlInput
-     */
-    public function getInputElement(): HtmlInput
-    {
-        $input = parent::getInputElement();
-
-        $input->step($this->step);
-
-        return $input;
+        return $this->step;
     }
 }

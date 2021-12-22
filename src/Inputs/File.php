@@ -2,40 +2,28 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
 /**
  * Class File
  * @package Nethead\Forms\Inputs
  */
-class File extends Text {
+class File extends Input {
     /**
      * File constructor.
      * @param string $name
-     * @param string $label
-     * @throws \Exception
+     * @param string|null $label
+     * @param string $id
      */
-    public function __construct(string $name, string $label)
+    public function __construct(string $name, string $label = null, string $id = '')
     {
-        parent::__construct($name, $label, '', '');
-    }
-
-    /**
-     * @return HtmlInput
-     */
-    protected function getInputElement(): HtmlInput
-    {
-        $input = parent::getInputElement();
-
-        $input->attrs()->remove('value');
-
-        return $input;
+        parent::__construct($name, '', '', $label, $id);
     }
 
     /**
      * @return string
      */
-    protected function getInputType(): string
+    public function getInputType(): string
     {
         return 'file';
     }

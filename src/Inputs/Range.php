@@ -2,39 +2,71 @@
 
 namespace Nethead\Forms\Inputs;
 
-use Nethead\Markup\Tags\Input as HtmlInput;
+use Nethead\Forms\Abstracts\Input;
 
 /**
  * Class Range
  * @package Nethead\Forms\Inputs
  */
-class Range extends Text {
+class Range extends Input {
     /**
-     * @var int
+     * @var int|mixed
      */
-    public $min = 0;
+    protected $min = 0;
 
     /**
-     * @var int
+     * @var int|mixed
      */
-    public $max = 100;
+    protected $max = 100;
 
     /**
      * Range constructor.
      * @param string $name
-     * @param string $label
-     * @param string $currentValue
+     * @param null $currentValue
      * @param string $defaultValue
+     * @param string|null $label
      * @param int $min
      * @param int $max
-     * @throws \Exception
+     * @param string $id
      */
-    public function __construct(string $name, string $label, string $currentValue = '', string $defaultValue = '', int $min = 0, int $max = 100)
+    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, $min = 0, $max = 100, string $id = '')
     {
-        parent::__construct($name, $label, $currentValue, $defaultValue);
+        parent::__construct($name, $currentValue, $defaultValue, $label, $id);
 
         $this->min = $min;
         $this->max = $max;
+    }
+
+    /**
+     * @param $min
+     */
+    public function setMin($min)
+    {
+        $this->min = $min;
+    }
+
+    /**
+     * @return int|mixed
+     */
+    public function getMin()
+    {
+        return $this->min;
+    }
+
+    /**
+     * @param $max
+     */
+    public function setMax($max)
+    {
+        $this->max = $max;
+    }
+
+    /**
+     * @return int|mixed
+     */
+    public function getMax()
+    {
+        return $this->max;
     }
 
     /**
@@ -43,17 +75,5 @@ class Range extends Text {
     public function getInputType(): string
     {
         return 'range';
-    }
-
-    /**
-     * @return HtmlInput
-     */
-    public function getInputElement(): HtmlInput
-    {
-        $input = parent::getInputElement();
-
-        $input->min($this->min)->max($this->max);
-
-        return $input;
     }
 }
