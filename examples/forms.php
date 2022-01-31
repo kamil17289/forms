@@ -16,6 +16,7 @@ $form->registerRenderer($renderer);
 
 print $form->open();
 
+print $form->render('_token');
 print $form->render('username');
 print $form->render('password');
 print $form->render('remember_me');

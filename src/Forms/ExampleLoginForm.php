@@ -3,6 +3,7 @@
 namespace Nethead\Forms\Forms;
 
 use Nethead\Forms\Inputs\Checkbox;
+use Nethead\Forms\Inputs\Hidden;
 use Nethead\Forms\Inputs\Password;
 use Nethead\Forms\Abstracts\Form;
 use Nethead\Forms\Inputs\Submit;
@@ -40,6 +41,7 @@ class ExampleLoginForm extends Form {
      */
     protected function createInputs(): void
     {
+        $this->addElement(new Hidden('_token', 'someHiddenSecureValue', 'csrf_token'));
         $this->addElement(new Text('username', '', '', 'Username'));
         $this->addElement(new Password('password', 'Password'));
         $this->addElement(new Checkbox('remember_me', false, true, 'Remember me'));
