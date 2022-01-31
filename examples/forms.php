@@ -20,5 +20,6 @@ print $form->render('username');
 print $form->render('password');
 print $form->render('remember_me');
 print $form->render('submit');
+print $form->render('reset');
 
 print $form->close();

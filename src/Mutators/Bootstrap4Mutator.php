@@ -56,7 +56,7 @@ class Bootstrap4Mutator implements MutatorInterface {
                 case 'button':
                 case 'reset':
                 case 'submit':
-                    $this->mutateButtons($input);
+                    $this->mutateButtons($input, $type);
                     break;
 
                 default:

@@ -2,10 +2,11 @@
 
 namespace Nethead\Forms\Forms;
 
-use Nethead\Forms\Abstracts\Form;
 use Nethead\Forms\Inputs\Checkbox;
 use Nethead\Forms\Inputs\Password;
+use Nethead\Forms\Abstracts\Form;
 use Nethead\Forms\Inputs\Submit;
+use Nethead\Forms\Inputs\Reset;
 use Nethead\Forms\Inputs\Text;
 
 /**
@@ -43,5 +44,6 @@ class ExampleLoginForm extends Form {
         $this->addElement(new Password('password', 'Password'));
         $this->addElement(new Checkbox('remember_me', false, true, 'Remember me'));
         $this->addElement(new Submit('submit', 'Login'));
+        $this->addElement(new Reset('reset', 'Reset'));
     }
 }
