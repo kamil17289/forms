@@ -20,6 +20,8 @@ print $form->render('_token');
 print $form->render('username');
 print $form->render('password');
 print $form->render('remember_me');
+print $form->render('ui_1');
+print $form->render('ui_2');
 print $form->render('submit');
 print $form->render('reset');
 

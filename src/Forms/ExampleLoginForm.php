@@ -6,6 +6,7 @@ use Nethead\Forms\Inputs\Checkbox;
 use Nethead\Forms\Inputs\Hidden;
 use Nethead\Forms\Inputs\Password;
 use Nethead\Forms\Abstracts\Form;
+use Nethead\Forms\Inputs\Radio;
 use Nethead\Forms\Inputs\Submit;
 use Nethead\Forms\Inputs\Reset;
 use Nethead\Forms\Inputs\Text;
@@ -45,6 +46,8 @@ class ExampleLoginForm extends Form {
         $this->addElement(new Text('username', '', '', 'Username'));
         $this->addElement(new Password('password', 'Password'));
         $this->addElement(new Checkbox('remember_me', false, true, 'Remember me'));
+        $this->addElement(new Radio('ui', 'new', 'new', 'Login with new UI', 'newui'));
+        $this->addElement(new Radio('ui', 'old', 'new', 'Login with legacy UI', 'oldui'));
         $this->addElement(new Submit('submit', 'Login'));
         $this->addElement(new Reset('reset', 'Reset'));
     }

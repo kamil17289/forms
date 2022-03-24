@@ -251,7 +251,9 @@ class MarkupRenderer implements RendererInterface {
         }
 
         if ($element instanceof Radio) {
-            $input->attrs()->set('checked', $element->getValue() == $element->getSelectedValue());
+            $input->attrs()
+                ->set('checked', $element->getValue() == $element->getSelectedValue())
+                ->set('name', $element->getRealName());
         }
 
         if ($element instanceof File) {

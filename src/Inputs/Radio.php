@@ -15,6 +15,17 @@ class Radio extends Input {
     protected $selectedValue = '';
 
     /**
+     * Real name of the radio button
+     * @var string
+     */
+    protected $realName = '';
+
+    /**
+     * @var array
+     */
+    protected static $namesRegister = [];
+
+    /**
      * Radio constructor.
      * @param string $name
      * @param null $currentValue
@@ -24,7 +35,9 @@ class Radio extends Input {
      */
     public function __construct(string $name, $currentValue = null, $selectedValue = '', string $label = null, string $id = '')
     {
-        parent::__construct($name, $currentValue, $currentValue, $label, $id);
+        $this->realName = $name;
+
+        parent::__construct(self::removeNameConflicts($name), $currentValue, $currentValue, $label, $id);
 
         $this->selectedValue = $selectedValue;
     }
@@ -40,8 +53,32 @@ class Radio extends Input {
     /**
      * @return string
      */
+    public function getRealName(): string
+    {
+        return $this->realName;
+    }
+
+    /**
+     * @return string
+     */
     public function getInputType(): string
     {
         return 'radio';
+    }
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    protected static function removeNameConflicts(string $name): string
+    {
+        if (isset(self::$namesRegister[$name])) {
+            self::$namesRegister[$name]++;
+        }
+        else {
+            self::$namesRegister[$name] = 1;
+        }
+
+        return sprintf('%s_%s', $name, self::$namesRegister[$name]);
     }
 }
