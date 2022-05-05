@@ -5,6 +5,7 @@ namespace Nethead\Forms\Controls;
 use Nethead\Forms\Abstracts\Element;
 use Nethead\Forms\Pipelines\Pipeline;
 use Nethead\Forms\Renderers\Button as ButtonRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Button
@@ -13,6 +14,7 @@ use Nethead\Forms\Renderers\Button as ButtonRenderer;
 class Button extends Element {
     public static $pipeline = [
         ButtonRenderer::class,
+        WrapperRenderer::class,
     ];
 
     /**
