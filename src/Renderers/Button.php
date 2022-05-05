@@ -9,6 +9,11 @@ use Nethead\Forms\Controls\Button as ButtonField;
 
 class Button extends Renderer {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options

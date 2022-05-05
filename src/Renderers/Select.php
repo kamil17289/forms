@@ -10,6 +10,11 @@ use Nethead\Markup\Tags\Select as HtmlSelect;
 
 class Select extends Renderer {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options

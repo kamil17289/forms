@@ -8,6 +8,11 @@ use Nethead\Forms\Inputs\Checkbox as CheckboxField;
 
 class Checkbox extends Input {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options

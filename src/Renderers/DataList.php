@@ -9,6 +9,11 @@ use Nethead\Forms\Inputs\DataList as DataListField;
 
 class DataList extends Input {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options

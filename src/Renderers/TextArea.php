@@ -8,6 +8,11 @@ use Nethead\Markup\Tags\Textarea as HtmlTextArea;
 
 class TextArea extends Renderer {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options
