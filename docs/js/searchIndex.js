@@ -1,10 +1,25 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\Nethead\\Forms\\Abstracts\\DataField",
+            "name": "DataField",
+            "summary": "Class\u0020DataField\nBasic\u0020Element\u0020which\u0020can\u0020hold\u0020and\u0020store\u0020\u0028name,value\u0029\u0020entity.",
+            "url": "classes/Nethead-Forms-Abstracts-DataField.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Abstracts\\DataField\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "DataField\u0020constructor.",
+            "url": "classes/Nethead-Forms-Abstracts-DataField.html#method___construct"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Element",
             "name": "Element",
             "summary": "Class\u0020Element\nThe\u0020most\u0020basic\u0020element\u0020of\u0020the\u0020form.",
             "url": "classes/Nethead-Forms-Abstracts-Element.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Abstracts-Element.html#method_render"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
@@ -13,12 +28,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003AsetFormId\u0028\u0029",
             "name": "setFormId",
-            "summary": "",
+            "summary": "Set\u0020Form\u0020to\u0020which\u0020this\u0020element\u0020belongs.",
             "url": "classes/Nethead-Forms-Abstracts-Element.html#method_setFormId"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003AgetFormId\u0028\u0029",
             "name": "getFormId",
-            "summary": "",
+            "summary": "Get\u0020ID\u0020of\u0020the\u0020form\u0020to\u0020which\u0020this\u0020element\u0020belongs.",
             "url": "classes/Nethead-Forms-Abstracts-Element.html#method_getFormId"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003AsetName\u0028\u0029",
@@ -61,159 +76,149 @@ Search.appendIndex(
             "summary": "FormId\u0020which\u0020is\u0020assigned\u0020when\u0020the\u0020element\u0020is\u0020put\u0020inside\u0020the\u0020Form",
             "url": "classes/Nethead-Forms-Abstracts-Element.html#property_formId"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Abstracts\\Element\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Abstracts-Element.html#property_pipeline"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form",
             "name": "Form",
-            "summary": "Class\u0020Form",
+            "summary": "Class\u0020Form\nAbstract\u0020form\u0020should\u0020be\u0020extended\u0020to\u0020create\u0020own\u0020specific\u0020forms.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AcreateInputs\u0028\u0029",
             "name": "createInputs",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020class.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_createInputs"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetAction\u0028\u0029",
             "name": "getAction",
-            "summary": "",
+            "summary": "Required\u0020method\u0020which\u0020returns\u0020the\u0020action\u0020of\u0020the\u0020form\n\u0028where\u0020the\u0020data\u0020should\u0020be\u0020sent\u0029.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getAction"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Form\u0020constructor.",
+            "summary": "Form\u0020constructor.\u0020Calls\u0020the\u0020createInputs\u0028\u0029\u0020method\u0020of\nthe\u0020extending\u0020class\u0020to\u0020fill\u0020the\u0020form\u0020with\u0020Elements.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method___construct"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AsetMethod\u0028\u0029",
             "name": "setMethod",
-            "summary": "",
+            "summary": "All\u0020Forms\u0020are\u0020by\u0020default\u0020set\u0020to\u0020use\u0020POST,\u0020but\u0020this\u0020method\ncan\u0020be\u0020called\u0020to\u0020change\u0020it.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_setMethod"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetMethod\u0028\u0029",
             "name": "getMethod",
-            "summary": "",
+            "summary": "Get\u0020the\u0020Form\u0020HTTP\u0020method,\u0020if\u0020you\u0027re\u0020curious.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getMethod"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024hasFiles",
             "name": "hasFiles",
-            "summary": "",
+            "summary": "Internal\u0020flag,\u0020says\u0020if\u0020the\u0020form\u0020have\u0020file\u0020inputs.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_hasFiles"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AsetFormId\u0028\u0029",
             "name": "setFormId",
-            "summary": "",
+            "summary": "Set\u0020the\u0020form\u0027s\u0020HTML\u0020ID.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_setFormId"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetFormId\u0028\u0029",
             "name": "getFormId",
-            "summary": "",
+            "summary": "Get\u0020the\u0020Form\u0020HTML\u0020ID.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getFormId"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetCharset\u0028\u0029",
             "name": "getCharset",
-            "summary": "",
+            "summary": "Get\u0020the\u0020Forms\u0020characters\u0020encoding.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getCharset"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AaddElement\u0028\u0029",
             "name": "addElement",
-            "summary": "",
+            "summary": "Register\u0020new\u0020Element\u0020in\u0020the\u0020form.\u0020Should\u0020be\u0020used\ninside\u0020of\u0020the\u0020createElements\u0028\u0029,\u0020but\u0020can\u0020also\u0020register\nadditional\u0020elements\u0020if\u0020you\u0020need\u0020them.\u0020All\u0020elements\u0020are\nautomatically\u0020assigned\u0020to\u0020the\u0020form\u0020with\u0020its\u0020form\u0020ID.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_addElement"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetElement\u0028\u0029",
             "name": "getElement",
-            "summary": "",
+            "summary": "Get\u0020the\u0020Element\u0020of\u0020specified\u0020name.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getElement"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetAllElements\u0028\u0029",
             "name": "getAllElements",
-            "summary": "",
+            "summary": "Get\u0020an\u0020array\u0020of\u0020all\u0020elements.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getAllElements"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AgetElementsNames\u0028\u0029",
             "name": "getElementsNames",
-            "summary": "",
+            "summary": "Get\u0020an\u0020array\u0020of\u0020element\u0027s\u0020names.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_getElementsNames"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "",
+            "summary": "Convert\u0020the\u0020form\u0020to\u0020an\u0020array\u0020where\u0020data\u0020names\u0020are\u0020keys,\nand\u0020values\u0020are\u0020data\u0020values\u0020of\u0020each\u0020form\u0027s\u0020element.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_toArray"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AfillFromArray\u0028\u0029",
             "name": "fillFromArray",
-            "summary": "",
+            "summary": "Quickly\u0020fill\u0020the\u0020form\u0020with\u0020data\u0020from\u0020array.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_fillFromArray"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AcreateFromArray\u0028\u0029",
             "name": "createFromArray",
-            "summary": "",
+            "summary": "Create\u0020form\u0020instance\u0020already\u0020filled\u0020with\u0020data\u0020from\u0020provided\u0020array.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_createFromArray"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003AregisterRenderer\u0028\u0029",
-            "name": "registerRenderer",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Abstracts-Form.html#method_registerRenderer"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003ApreRender\u0028\u0029",
             "name": "preRender",
-            "summary": "",
+            "summary": "Create\u0020internal\u0020HtmlForm\u0020instance\u0020for\u0020printing\u0020\u003Cform\u003E\u0020tag.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_preRender"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003Aopen\u0028\u0029",
             "name": "open",
-            "summary": "",
+            "summary": "Print\u0020opening\u0020of\u0020the\u0020\u003Cform\u003E\u0020with\u0020attributes\u0020based\u0020on\u0020configuration.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_open"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003Aclose\u0028\u0029",
             "name": "close",
-            "summary": "",
+            "summary": "Print\u0020closing\u0020\u003C\/form\u003E\u0020tag.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_close"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "",
+            "summary": "Render\u0020an\u0020Element\u0020using\u0020the\u0020registered\u0020renderer.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#method_render"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024slug",
-            "name": "slug",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Abstracts-Form.html#property_slug"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024method",
             "name": "method",
-            "summary": "",
+            "summary": "HTTP\u0020method\u0020to\u0020use\u0020for\u0020sending\u0020the\u0020data.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_method"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024charset",
             "name": "charset",
-            "summary": "",
+            "summary": "Specifies\u0020the\u0020character\u0020encodings",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_charset"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024elements",
             "name": "elements",
-            "summary": "",
+            "summary": "Elements\u0020within\u0020this\u0020form.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_elements"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024formId",
             "name": "formId",
-            "summary": "",
+            "summary": "HTML\u0020ID\u0020of\u0020this\u0020form.\u0020It\u0020will\u0020be\u0020assigned\u0020for\u0020all\u0020elements\nadded\u0020with\u0020addElement\u0028\u0029",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_formId"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024html",
             "name": "html",
-            "summary": "",
+            "summary": "Object\u0020representing\u0020the\u0020form\u0020HTML.",
             "url": "classes/Nethead-Forms-Abstracts-Form.html#property_html"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Abstracts\\Form\u003A\u003A\u0024renderer",
-            "name": "renderer",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Abstracts-Form.html#property_renderer"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Input",
             "name": "Input",
-            "summary": "Class\u0020Input",
+            "summary": "Class\u0020Input\nA\u0020specific\u0020DataField\u0020which\u0020supports\u0020\u003Cinput\u003E\u0020elements.",
             "url": "classes/Nethead-Forms-Abstracts-Input.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Input\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Abstracts-Input.html#method_getInputType"
         },                {
             "fqsen": "\\Nethead\\Forms\\Abstracts\\Input\u003A\u003A__construct\u0028\u0029",
@@ -221,35 +226,10 @@ Search.appendIndex(
             "summary": "Input\u0020constructor.",
             "url": "classes/Nethead-Forms-Abstracts-Input.html#method___construct"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Abstracts\\DataField",
-            "name": "DataField",
-            "summary": "Class\u0020DataField\nBasic\u0020Element\u0020which\u0020can\u0020hold\u0020and\u0020store\u0020\u0028name,value\u0029\u0020entity",
-            "url": "classes/Nethead-Forms-Abstracts-DataField.html"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Abstracts\\DataField\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "DataField\u0020constructor.",
-            "url": "classes/Nethead-Forms-Abstracts-DataField.html#method___construct"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Contracts\\MutatorInterface",
-            "name": "MutatorInterface",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Contracts-MutatorInterface.html"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Contracts\\MutatorInterface\u003A\u003A__invoke\u0028\u0029",
-            "name": "__invoke",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Contracts-MutatorInterface.html#method___invoke"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Contracts\\RendererInterface",
-            "name": "RendererInterface",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Contracts-RendererInterface.html"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Contracts\\RendererInterface\u003A\u003Arender\u0028\u0029",
+            "fqsen": "\\Nethead\\Forms\\Abstracts\\Input\u003A\u003Arender\u0028\u0029",
             "name": "render",
             "summary": "",
-            "url": "classes/Nethead-Forms-Contracts-RendererInterface.html#method_render"
+            "url": "classes/Nethead-Forms-Abstracts-Input.html#method_render"
         },                {
             "fqsen": "\\Nethead\\Forms\\Controls\\Button",
             "name": "Button",
@@ -271,6 +251,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Controls-Button.html#method_getType"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Controls\\Button\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Controls-Button.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Controls\\Button\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Controls-Button.html#property_pipeline"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Controls\\Button\u003A\u003A\u0024text",
             "name": "text",
             "summary": "",
@@ -283,7 +273,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HasLabel",
             "name": "HasLabel",
-            "summary": "Trait\u0020HasLabel",
+            "summary": "Trait\u0020HasLabel\nAdds\u0020a\u0020ability\u0020to\u0020hold\u0020data\u0020label",
             "url": "classes/Nethead-Forms-Features-HasLabel.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HasLabel\u003A\u003AsetLabel\u0028\u0029",
@@ -303,7 +293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HasMessages",
             "name": "HasMessages",
-            "summary": "Trait\u0020HasMessages",
+            "summary": "Trait\u0020HasMessages\nAdds\u0020ability\u0020to\u0020hold\u0020messages\u0020of\u0020given\u0020severity.",
             "url": "classes/Nethead-Forms-Features-HasMessages.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HasMessages\u003A\u003AgetAllMessages\u0028\u0029",
@@ -358,7 +348,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HoldsValue",
             "name": "HoldsValue",
-            "summary": "Trait\u0020HoldsValue",
+            "summary": "Trait\u0020HoldsValue\nAdds\u0020ability\u0020to\u0020hold\u0020\u0028name,\u0020value\u0029\u0020entity.",
             "url": "classes/Nethead-Forms-Features-HoldsValue.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Features\\HoldsValue\u003A\u003AsetValue\u0028\u0029",
@@ -403,12 +393,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Forms\\ExampleLoginForm\u003A\u003AgetAction\u0028\u0029",
             "name": "getAction",
-            "summary": "",
+            "summary": "Required\u0020method\u0020which\u0020returns\u0020the\u0020action\u0020of\u0020the\u0020form\n\u0028where\u0020the\u0020data\u0020should\u0020be\u0020sent\u0029.",
             "url": "classes/Nethead-Forms-Forms-ExampleLoginForm.html#method_getAction"
         },                {
             "fqsen": "\\Nethead\\Forms\\Forms\\ExampleLoginForm\u003A\u003AcreateInputs\u0028\u0029",
             "name": "createInputs",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020class.",
             "url": "classes/Nethead-Forms-Forms-ExampleLoginForm.html#method_createInputs"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\BooleanCheckbox",
@@ -420,6 +410,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "BooleanCheckbox\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-BooleanCheckbox.html#method___construct"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\BooleanCheckbox\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-BooleanCheckbox.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Button",
             "name": "Button",
@@ -433,18 +428,43 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Button\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Button.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Button\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Button.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox",
             "name": "Checkbox",
             "summary": "Class\u0020Checkbox",
             "url": "classes/Nethead-Forms-Inputs-Checkbox.html"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Checkbox\u0020constructor.",
+            "url": "classes/Nethead-Forms-Inputs-Checkbox.html#method___construct"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox\u003A\u003AgetSelectedValue\u0028\u0029",
+            "name": "getSelectedValue",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Checkbox.html#method_getSelectedValue"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Checkbox.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Checkbox.html#property_pipeline"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Checkbox\u003A\u003A\u0024selectedValue",
+            "name": "selectedValue",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Checkbox.html#property_selectedValue"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Color",
             "name": "Color",
@@ -453,8 +473,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Color\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Color.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Color\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Color.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DataList",
             "name": "DataList",
@@ -468,7 +493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DataList\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-DataList.html#method_getInputType"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DataList\u003A\u003AgetOptions\u0028\u0029",
@@ -480,6 +505,11 @@ Search.appendIndex(
             "name": "getListId",
             "summary": "",
             "url": "classes/Nethead-Forms-Inputs-DataList.html#method_getListId"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\DataList\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-DataList.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DataList\u003A\u003A\u0024listId",
             "name": "listId",
@@ -498,8 +528,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Date\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Date.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Date\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Date.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DateTimeLocal",
             "name": "DateTimeLocal",
@@ -508,8 +543,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\DateTimeLocal\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-DateTimeLocal.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\DateTimeLocal\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-DateTimeLocal.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Email",
             "name": "Email",
@@ -518,8 +558,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Email\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Email.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Email\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Email.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\File",
             "name": "File",
@@ -533,8 +578,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\File\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-File.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\File\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-File.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Floating",
             "name": "Floating",
@@ -546,20 +596,10 @@ Search.appendIndex(
             "summary": "Floating\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-Floating.html#method___construct"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Floating\u003A\u003AsetStep\u0028\u0029",
-            "name": "setStep",
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Floating\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Floating.html#method_setStep"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Floating\u003A\u003AgetStep\u0028\u0029",
-            "name": "getStep",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Floating.html#method_getStep"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Floating\u003A\u003A\u0024step",
-            "name": "step",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Floating.html#property_step"
+            "url": "classes/Nethead-Forms-Inputs-Floating.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Hidden",
             "name": "Hidden",
@@ -573,8 +613,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Hidden\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Hidden.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Hidden\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Hidden.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Id",
             "name": "Id",
@@ -586,6 +631,11 @@ Search.appendIndex(
             "summary": "Id\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-Id.html#method___construct"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Id\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Id.html#property_pipeline"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Integer",
             "name": "Integer",
             "summary": "Class\u0020Integer",
@@ -596,20 +646,10 @@ Search.appendIndex(
             "summary": "Integer\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-Integer.html#method___construct"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Integer\u003A\u003AsetStep\u0028\u0029",
-            "name": "setStep",
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Integer\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Integer.html#method_setStep"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Integer\u003A\u003AgetStep\u0028\u0029",
-            "name": "getStep",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Integer.html#method_getStep"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Integer\u003A\u003A\u0024step",
-            "name": "step",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Integer.html#property_step"
+            "url": "classes/Nethead-Forms-Inputs-Integer.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Month",
             "name": "Month",
@@ -618,8 +658,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Month\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Month.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Month\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Month.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Number",
             "name": "Number",
@@ -628,8 +673,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Number\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Number.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Number\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Number.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Password",
             "name": "Password",
@@ -648,8 +698,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Password\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Password.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Password\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Password.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Radio",
             "name": "Radio",
@@ -666,15 +721,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Inputs-Radio.html#method_getSelectedValue"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003AgetRealName\u0028\u0029",
+            "name": "getRealName",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Radio.html#method_getRealName"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Radio.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003AremoveNameConflicts\u0028\u0029",
+            "name": "removeNameConflicts",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Radio.html#method_removeNameConflicts"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Radio.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003A\u0024selectedValue",
             "name": "selectedValue",
             "summary": "",
             "url": "classes/Nethead-Forms-Inputs-Radio.html#property_selectedValue"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003A\u0024realName",
+            "name": "realName",
+            "summary": "Real\u0020name\u0020of\u0020the\u0020radio\u0020button",
+            "url": "classes/Nethead-Forms-Inputs-Radio.html#property_realName"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Radio\u003A\u003A\u0024namesRegister",
+            "name": "namesRegister",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Radio.html#property_namesRegister"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Range",
             "name": "Range",
@@ -686,40 +766,15 @@ Search.appendIndex(
             "summary": "Range\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-Range.html#method___construct"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003AsetMin\u0028\u0029",
-            "name": "setMin",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#method_setMin"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003AgetMin\u0028\u0029",
-            "name": "getMin",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#method_getMin"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003AsetMax\u0028\u0029",
-            "name": "setMax",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#method_setMax"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003AgetMax\u0028\u0029",
-            "name": "getMax",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#method_getMax"
-        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Range.html#method_getInputType"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003A\u0024min",
-            "name": "min",
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#property_min"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Range\u003A\u003A\u0024max",
-            "name": "max",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Range.html#property_max"
+            "url": "classes/Nethead-Forms-Inputs-Range.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Reset",
             "name": "Reset",
@@ -728,7 +783,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Reset\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Reset.html#method_getInputType"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Search",
@@ -738,8 +793,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Search\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Search.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Search\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Search.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Select",
             "name": "Select",
@@ -761,6 +821,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Inputs-Select.html#method_getOptions"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Select\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Select.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Select\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Select.html#property_pipeline"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Select\u003A\u003A\u0024options",
             "name": "options",
             "summary": "",
@@ -773,7 +843,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Submit\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Submit.html#method_getInputType"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Tel",
@@ -783,8 +853,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Tel\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Tel.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Tel\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Tel.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Text",
             "name": "Text",
@@ -793,28 +868,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Text\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Text.html#method_getInputType"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Text\u003A\u003AsetSize\u0028\u0029",
-            "name": "setSize",
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Text\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Text.html#method_setSize"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Text\u003A\u003AgetSize\u0028\u0029",
-            "name": "getSize",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Text.html#method_getSize"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Inputs\\Text\u003A\u003A\u0024size",
-            "name": "size",
-            "summary": "",
-            "url": "classes/Nethead-Forms-Inputs-Text.html#property_size"
+            "url": "classes/Nethead-Forms-Inputs-Text.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\TextArea",
             "name": "TextArea",
             "summary": "Class\u0020TextArea",
             "url": "classes/Nethead-Forms-Inputs-TextArea.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\TextArea\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-TextArea.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\TextArea\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-TextArea.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Time",
             "name": "Time",
@@ -823,8 +898,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Time\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Time.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Time\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Time.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Url",
             "name": "Url",
@@ -833,8 +913,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Url\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Url.html#method_getInputType"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Url\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Inputs-Url.html#property_pipeline"
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Week",
             "name": "Week",
@@ -843,178 +928,263 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\Week\u003A\u003AgetInputType\u0028\u0029",
             "name": "getInputType",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020be\u0020implemented\u0020by\u0020extending\u0020classes\u0020for\u0020proper\nrendering\u0020of\u0020the\u0020HTML\u0020element.\u0020Basically\u0020it\u0020returns\u0020is\u0020a\u0020HTML\u0020type\u003D\u0022\u0022\u0020attribute\u0020value.",
             "url": "classes/Nethead-Forms-Inputs-Week.html#method_getInputType"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator",
-            "name": "Bootstrap4Mutator",
-            "summary": "Class\u0020Bootstrap4Mutator",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Bootstrap4Mutator\u0020constructor.",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#method___construct"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003A__invoke\u0028\u0029",
-            "name": "__invoke",
+            "fqsen": "\\Nethead\\Forms\\Inputs\\Week\u003A\u003A\u0024pipeline",
+            "name": "pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#method___invoke"
+            "url": "classes/Nethead-Forms-Inputs-Week.html#property_pipeline"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003Awrapper_element\u0028\u0029",
-            "name": "wrapper_element",
+            "fqsen": "\\Nethead\\Forms\\Pipelines\\FullPipeline",
+            "name": "FullPipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#method_wrapper_element"
+            "url": "classes/Nethead-Forms-Pipelines-FullPipeline.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003AmutateButtons\u0028\u0029",
-            "name": "mutateButtons",
+            "fqsen": "\\Nethead\\Forms\\Pipelines\\FullPipeline\u003A\u003A\u0024pipes",
+            "name": "pipes",
             "summary": "",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#method_mutateButtons"
+            "url": "classes/Nethead-Forms-Pipelines-FullPipeline.html#property_pipes"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003A\u0024defaults",
-            "name": "defaults",
+            "fqsen": "\\Nethead\\Forms\\Pipelines\\Pipeline",
+            "name": "Pipeline",
             "summary": "",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#property_defaults"
+            "url": "classes/Nethead-Forms-Pipelines-Pipeline.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators\\Bootstrap4Mutator\u003A\u003A\u0024options",
+            "fqsen": "\\Nethead\\Forms\\Pipelines\\Pipeline\u003A\u003Asend\u0028\u0029",
+            "name": "send",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Pipelines-Pipeline.html#method_send"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Pipelines\\Pipeline\u003A\u003A\u0024pipes",
+            "name": "pipes",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Pipelines-Pipeline.html#property_pipes"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\BooleanCheckbox",
+            "name": "BooleanCheckbox",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-BooleanCheckbox.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\BooleanCheckbox\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-BooleanCheckbox.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Button",
+            "name": "Button",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Button.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Button\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Button.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Checkbox",
+            "name": "Checkbox",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Checkbox.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Checkbox\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Checkbox.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\DataList",
+            "name": "DataList",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-DataList.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\DataList\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-DataList.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\DataList\u003A\u003AcreateDataList\u0028\u0029",
+            "name": "createDataList",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-DataList.html#method_createDataList"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\File",
+            "name": "File",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-File.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\File\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-File.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Floating",
+            "name": "Floating",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Floating.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Floating\u003A\u003A\u0024options",
             "name": "options",
             "summary": "",
-            "url": "classes/Nethead-Forms-Mutators-Bootstrap4Mutator.html#property_options"
+            "url": "classes/Nethead-Forms-Renderers-Floating.html#property_options"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer",
-            "name": "MarkupRenderer",
-            "summary": "Class\u0020MarkupRenderer",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Id",
+            "name": "Id",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Id.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "MarkupRenderer\u0020constructor.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method___construct"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Id\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Id.html#property_options"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AsetRenderer\u0028\u0029",
-            "name": "setRenderer",
-            "summary": "Set\u0020the\u0020rendering\u0020function\u0020for\u0020different\u0020elements\u0020types.\u0020There\u0020are\u00204\u0020types\u0020of\u0020elements\nthat\u0020can\u0020be\u0020rendered\u0020to\u0020display\u0020a\u0020form\u0020field\u0020in\u0020HTML.\u0020See\u0020below\u0020\u0024type\u0020parameter.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_setRenderer"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Input",
+            "name": "Input",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Input.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AsetMutator\u0028\u0029",
-            "name": "setMutator",
-            "summary": "Set\u0020the\u0020mutator\u0020for\u0020the\u0020elements.\u0020Mutators\u0020are\u0020callables\u0020that\u0020can\u0020alter\nthe\u0020attributes\u0020of\u0020an\u0020HTML\u0020element\u0020after\u0020it\u0020is\u0020created\u0020by\u0020a\u0020renderer.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_setMutator"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Amutate\u0028\u0029",
-            "name": "mutate",
-            "summary": "Internal\u0020function\u0020for\u0020calling\u0020mutators\u0020on\u0020HTML\u0020fragments.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_mutate"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Arender\u0028\u0029",
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Input\u003A\u003Arender\u0028\u0029",
             "name": "render",
-            "summary": "Render\u0020the\u0020Element\u0020object.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_render"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AcallElementRenderer\u0028\u0029",
-            "name": "callElementRenderer",
             "summary": "",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_callElementRenderer"
+            "url": "classes/Nethead-Forms-Renderers-Input.html#method_render"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003A__invoke\u0028\u0029",
-            "name": "__invoke",
-            "summary": "Quickly\u0020use\u0020renderer\u0020in\u0020functional\u0020way.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method___invoke"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Integer",
+            "name": "Integer",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Integer.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Alabel_element\u0028\u0029",
-            "name": "label_element",
-            "summary": "Renders\u0020a\u0020\u003Clabel\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_label_element"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Integer\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Integer.html#property_options"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Ainput_element\u0028\u0029",
-            "name": "input_element",
-            "summary": "Renders\u0020an\u0020\u003Cinput\u003E,\u0020\u003Cselect\u003E,\u0020and\u0020\u003Ctextarea\u003E\u0020elements\u0020from\u0020DataField\u0020object.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_input_element"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Label",
+            "name": "Label",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Label.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Amessages_element\u0028\u0029",
-            "name": "messages_element",
-            "summary": "Renders\u0020any\u0020notifications\u0020you\u0020add\u0020on\u0020the\u0020Elements.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_messages_element"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Label\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Label.html#method_render"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Abutton_element\u0028\u0029",
-            "name": "button_element",
-            "summary": "Renders\u0020\u003Cbutton\u003E\u0020elements\u0020from\u0020Button\u0020object.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_button_element"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Messages",
+            "name": "Messages",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Messages.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003Awrapper_element\u0028\u0029",
-            "name": "wrapper_element",
-            "summary": "Wraps\u0020the\u0020HTML\u0020fragment\u0020inside\u0020of\u0020a\u0020\u003Cdiv\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_wrapper_element"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Messages\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Messages.html#method_render"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AgetBaseInput\u0028\u0029",
-            "name": "getBaseInput",
-            "summary": "Create\u0020a\u0020base\u0020\u003Cinput\u003E,\u0020\u003Cselect\u003E\u0020or\u0020\u003Ctextarea\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_getBaseInput"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Messages\u003A\u003Amessage\u0028\u0029",
+            "name": "message",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Messages.html#method_message"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AcreateOptions\u0028\u0029",
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Messages\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Messages.html#property_options"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Radio",
+            "name": "Radio",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Radio.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Radio\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Radio.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Range",
+            "name": "Range",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Range.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Range\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Range.html#property_options"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Renderer",
+            "name": "Renderer",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Renderer.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Renderer\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Renderer.html#property_options"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Renderer\u003A\u003Aextend\u0028\u0029",
+            "name": "extend",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Renderer.html#method_extend"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Renderer\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Renderer.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select",
+            "name": "Select",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Select.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Select.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select\u003A\u003AcreateOptions\u0028\u0029",
             "name": "createOptions",
-            "summary": "Create\u0020options\u0020for\u0020\u003Cdatalist\u003E\u0020or\u0020\u003Cselect\u003E",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_createOptions"
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Select.html#method_createOptions"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AcreateOptGroup\u0028\u0029",
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select\u003A\u003AcreateOptGroup\u0028\u0029",
             "name": "createOptGroup",
-            "summary": "Create\u0020a\u0020\u003Coptgroup\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_createOptGroup"
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Select.html#method_createOptGroup"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AcreateOption\u0028\u0029",
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select\u003A\u003AcreateOption\u0028\u0029",
             "name": "createOption",
-            "summary": "Create\u0020a\u0020\u003Coption\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_createOption"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AcreateDataList\u0028\u0029",
-            "name": "createDataList",
-            "summary": "Create\u0020a\u0020\u003Cdatalist\u003E\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#method_createDataList"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_INPUT",
-            "name": "MODE_INPUT",
-            "summary": "Indicates\u0020that\u0020the\u0020input\u0020element\u0020is\u0020present.\u0020should\u0020be\u0020rendered.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_INPUT"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_LABEL",
-            "name": "MODE_LABEL",
-            "summary": "Indicates\u0020that\u0020if\u0020label\u0020element\u0020is\u0020present,\u0020should\u0020be\u0020rendered.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_LABEL"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_MESSAGES",
-            "name": "MODE_MESSAGES",
-            "summary": "Indicates\u0020that\u0020if\u0020messages\u0020are\u0020present,\u0020should\u0020be\u0020rendered.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_MESSAGES"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_WRAP",
-            "name": "MODE_WRAP",
-            "summary": "Indicates\u0020that\u0020input,\u0020label\u0020and\u0020messages\u0020should\u0020rendered\u0020inside\u0020of\u0020wrapper\u0020element.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_WRAP"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_FULL",
-            "name": "MODE_FULL",
-            "summary": "A\u0020bitwise\u0020\u0026\u0020from\u0020the\u0020modes\u0020above.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_FULL"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003AMODE_MUTATE",
-            "name": "MODE_MUTATE",
-            "summary": "Indicates\u0020that\u0020if\u0020any\u0020mutators\u0020are\u0020set,\u0020they\u0020should\u0020be\u0020used\u0020to\u0020alter\u0020elements.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#constant_MODE_MUTATE"
-        },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003A\u0024renderers",
-            "name": "renderers",
             "summary": "",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#property_renderers"
+            "url": "classes/Nethead-Forms-Renderers-Select.html#method_createOption"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003A\u0024mutators",
-            "name": "mutators",
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Text",
+            "name": "Text",
             "summary": "",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#property_mutators"
+            "url": "classes/Nethead-Forms-Renderers-Text.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Renderers\\MarkupRenderer\u003A\u003A\u0024mode",
-            "name": "mode",
-            "summary": "Current\u0020rendering\u0020mode.\u0020Default\u0020mode\u0020will\u0020only\u0020render\nInput\u0020and\u0020Label\u0020elements\u0020inside\u0020of\u0020a\u0020wrapper.",
-            "url": "classes/Nethead-Forms-Renderers-MarkupRenderer.html#property_mode"
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Text\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Text.html#property_options"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\TextArea",
+            "name": "TextArea",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-TextArea.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\TextArea\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-TextArea.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Wrapper",
+            "name": "Wrapper",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Wrapper.html"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Wrapper\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Wrapper.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Wrapper\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Wrapper.html#property_options"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -1036,11 +1206,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/nethead.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Contracts",
-            "name": "Contracts",
-            "summary": "",
-            "url": "namespaces/nethead-forms-contracts.html"
-        },                {
             "fqsen": "\\Nethead\\Forms\\Controls",
             "name": "Controls",
             "summary": "",
@@ -1061,10 +1226,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/nethead-forms-inputs.html"
         },                {
-            "fqsen": "\\Nethead\\Forms\\Mutators",
-            "name": "Mutators",
+            "fqsen": "\\Nethead\\Forms\\Pipelines",
+            "name": "Pipelines",
             "summary": "",
-            "url": "namespaces/nethead-forms-mutators.html"
+            "url": "namespaces/nethead-forms-pipelines.html"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers",
             "name": "Renderers",

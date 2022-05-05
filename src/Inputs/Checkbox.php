@@ -3,12 +3,23 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Label as LabelRenderer;
+use Nethead\Forms\Renderers\Messages as MessagesRenderer;
+use Nethead\Forms\Renderers\Checkbox as CheckboxRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Checkbox
  * @package Nethead\Forms\Inputs
  */
 class Checkbox extends Input {
+    public static $pipeline = [
+        LabelRenderer::class,
+        CheckboxRenderer::class,
+        MessagesRenderer::class,
+        WrapperRenderer::class,
+    ];
+
     /**
      * @var mixed|string
      */

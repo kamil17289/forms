@@ -3,12 +3,19 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Input as InputRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Button
  * @package Nethead\Forms\Inputs
  */
 class Button extends Input {
+    public static $pipeline = [
+        InputRenderer::class,
+        WrapperRenderer::class,
+    ];
+
     /**
      * Button constructor.
      * @param string $name

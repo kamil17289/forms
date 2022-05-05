@@ -3,12 +3,17 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Input as InputRenderer;
 
 /**
  * Class Hidden
  * @package Nethead\Forms\Inputs
  */
 class Hidden extends Input {
+    public static $pipeline = [
+        InputRenderer::class,
+    ];
+
     /**
      * Hidden constructor.
      * @param string $name

@@ -3,12 +3,23 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Label as LabelRenderer;
+use Nethead\Forms\Renderers\Messages as MessagesRenderer;
+use Nethead\Forms\Renderers\DataList as DataListRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class DataList
  * @package Nethead\Forms\Inputs
  */
 class DataList extends Input {
+    public static $pipeline = [
+        LabelRenderer::class,
+        DataListRenderer::class,
+        MessagesRenderer::class,
+        WrapperRenderer::class,
+    ];
+
     /**
      * @var string
      */

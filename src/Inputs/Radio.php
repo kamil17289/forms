@@ -3,12 +3,23 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Label as LabelRenderer;
+use Nethead\Forms\Renderers\Messages as MessagesRenderer;
+use Nethead\Forms\Renderers\Radio as RadioRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Radio
  * @package Nethead\Forms\Inputs
  */
 class Radio extends Input {
+    public static $pipeline = [
+        LabelRenderer::class,
+        RadioRenderer::class,
+        MessagesRenderer::class,
+        WrapperRenderer::class,
+    ];
+
     /**
      * @var mixed|string
      */

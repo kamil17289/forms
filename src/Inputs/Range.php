@@ -3,21 +3,22 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\Input;
+use Nethead\Forms\Renderers\Label as LabelRenderer;
+use Nethead\Forms\Renderers\Messages as MessagesRenderer;
+use Nethead\Forms\Renderers\Range as RangeRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Range
  * @package Nethead\Forms\Inputs
  */
 class Range extends Input {
-    /**
-     * @var int|mixed
-     */
-    protected $min = 0;
-
-    /**
-     * @var int|mixed
-     */
-    protected $max = 100;
+    public static $pipeline = [
+        LabelRenderer::class,
+        RangeRenderer::class,
+        MessagesRenderer::class,
+        WrapperRenderer::class,
+    ];
 
     /**
      * Range constructor.
@@ -29,44 +30,9 @@ class Range extends Input {
      * @param int $max
      * @param string $id
      */
-    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, $min = 0, $max = 100, string $id = '')
+    public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, string $id = '')
     {
         parent::__construct($name, $currentValue, $defaultValue, $label, $id);
-
-        $this->min = $min;
-        $this->max = $max;
-    }
-
-    /**
-     * @param $min
-     */
-    public function setMin($min)
-    {
-        $this->min = $min;
-    }
-
-    /**
-     * @return int|mixed
-     */
-    public function getMin()
-    {
-        return $this->min;
-    }
-
-    /**
-     * @param $max
-     */
-    public function setMax($max)
-    {
-        $this->max = $max;
-    }
-
-    /**
-     * @return int|mixed
-     */
-    public function getMax()
-    {
-        return $this->max;
     }
 
     /**

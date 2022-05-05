@@ -29,6 +29,17 @@ abstract class Element {
     protected $formId = '';
 
     /**
+     * @var array
+     */
+    public static $pipeline = [];
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    abstract public function render(array $options = []);
+
+    /**
      * Element constructor.
      * @param string $name Provide a name for a new element.
      * @param string $id Provide HTML ID for the new element or it will be generated randomly.

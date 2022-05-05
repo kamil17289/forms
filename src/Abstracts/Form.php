@@ -2,7 +2,6 @@
 
 namespace Nethead\Forms\Abstracts;
 
-use Nethead\Forms\Contracts\RendererInterface;
 use Nethead\Markup\Tags\Form as HtmlForm;
 use RuntimeException;
 
@@ -49,12 +48,6 @@ abstract class Form {
      * @var HtmlForm
      */
     protected $html;
-
-    /**
-     * Renderer for printing form fields as HTML code.
-     * @var RendererInterface
-     */
-    protected $renderer;
 
     /**
      * This method must be implemented by extending class.
@@ -244,16 +237,6 @@ abstract class Form {
     }
 
     /**
-     * Register a renderer, which will be responsible for rendering elements.
-     * Only one renderer can be assigned to a form.
-     * @param RendererInterface $renderer
-     */
-    public function registerRenderer(RendererInterface $renderer)
-    {
-        $this->renderer = $renderer;
-    }
-
-    /**
      * Create internal HtmlForm instance for printing <form> tag.
      */
     protected function preRender(): void
@@ -299,19 +282,15 @@ abstract class Form {
      * @return string
      *  HTML code as string.
      * @throws RuntimeException
-     *  When no renderer has been assigned to a form
-     *  or if element doesn't exists.
+     *  When element doesn't exists.
      */
-    public function render(string $name): string
+    public function render(string $name, $renderingOptions = []): string
     {
-        if (is_null($this->renderer))
-            throw new RuntimeException('No renderer has been set!');
-
         $element = $this->getElement($name);
 
         if (! $element)
             throw new RuntimeException('Element ' . $name . ' not found!');
 
-        return $this->renderer->render($element);
+        return $element->render($renderingOptions);
     }
 }

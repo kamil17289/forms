@@ -3,12 +3,24 @@
 namespace Nethead\Forms\Inputs;
 
 use Nethead\Forms\Abstracts\DataField;
+use Nethead\Forms\Pipelines\Pipeline;
+use Nethead\Forms\Renderers\Label as LabelRenderer;
+use Nethead\Forms\Renderers\Messages as MessagesRenderer;
+use Nethead\Forms\Renderers\Select as SelectRenderer;
+use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
 
 /**
  * Class Select
  * @package Nethead\Forms\Inputs
  */
 class Select extends DataField {
+    public static $pipeline = [
+        LabelRenderer::class,
+        SelectRenderer::class,
+        MessagesRenderer::class,
+        WrapperRenderer::class,
+    ];
+
     /**
      * @var array
      */
@@ -48,5 +60,14 @@ class Select extends DataField {
     public function getOptions(): array
     {
         return $this->options;
+    }
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    public function render(array $options = [])
+    {
+        return Pipeline::send($this, $options, static::$pipeline);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Nethead\Forms\Abstracts;
 
+use Nethead\Forms\Pipelines\Pipeline;
+
 /**
  * Class Input
  * A specific DataField which supports <input> elements.
@@ -22,5 +24,14 @@ abstract class Input extends DataField {
     public function __construct(string $name, $currentValue = null, $defaultValue = '', string $label = null, string $id = '')
     {
         parent::__construct($name, $currentValue, $defaultValue, $label, $id);
+    }
+
+    /**
+     * @param array $options
+     * @return mixed
+     */
+    public function render(array $options = [])
+    {
+        return Pipeline::send($this, $options, static::$pipeline);
     }
 }
