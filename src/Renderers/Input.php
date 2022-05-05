@@ -8,6 +8,11 @@ use Nethead\Markup\Tags\Input as HtmlInput;
 
 class Input extends Renderer {
     /**
+     * @var array
+     */
+    public static $options = [];
+
+    /**
      * @param Fragment $fragment
      * @param Element|null $element
      * @param array $options

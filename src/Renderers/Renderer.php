@@ -18,6 +18,10 @@ abstract class Renderer {
      */
     public static function options(array $options = [], string $key = null): array
     {
+        if (empty($options)) {
+            return static::$options;
+        }
+
         if (is_null($key)) {
             return array_merge(static::$options, $options);
         }
@@ -26,7 +30,7 @@ abstract class Renderer {
             return array_merge(static::$options, $options[$key]);
         }
 
-        return static::$options ?? [];
+        return static::$options;
     }
 
     /**
