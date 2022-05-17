@@ -22,12 +22,12 @@ class BooleanCheckbox extends Checkbox {
     /**
      * BooleanCheckbox constructor.
      * @param string $name
-     * @param string $selectedValue
+     * @param int $currentValue
      * @param string|null $label
      * @param string $id
      */
-    public function __construct(string $name, $selectedValue = '', string $label = null, string $id = '')
+    public function __construct(string $name, $currentValue = 0, string $label = null, string $id = '')
     {
-        parent::__construct($name, 1, $selectedValue, $label, $id);
+        parent::__construct($name, $currentValue, 1, $label, $id);
     }
 }
