@@ -39,7 +39,7 @@ abstract class Renderer {
      */
     public static function extend(array $options)
     {
-        static::$options = array_merge_recursive(static::$options, $options);
+        static::$options = array_replace_recursive(static::$options, $options);
     }
 
     /**
