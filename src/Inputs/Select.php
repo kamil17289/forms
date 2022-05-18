@@ -50,8 +50,9 @@ class Select extends DataField {
         if (empty($options) && method_exists($this, 'getDefaultOptions')) {
             $this->options = $this->getDefaultOptions();
         }
-
-        $this->options = $options;
+        else {
+            $this->options = $options;
+        }
     }
 
     /**
@@ -64,7 +65,7 @@ class Select extends DataField {
 
     /**
      * @param array $options
-     * @return mixed
+     * @return Fragment
      */
     public function render(array $options = [])
     {

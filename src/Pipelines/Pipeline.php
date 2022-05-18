@@ -20,7 +20,7 @@ class Pipeline {
      * @param array $pipes
      * @return Fragment
      */
-    public static function send(Element $element, array $options = [], array $pipes = [])
+    public static function send(Element $element, array $options = [], array $pipes = []): Fragment
     {
         $fragment = new Fragment();
 
