@@ -64,6 +64,11 @@ $select = new Select('contanct_method', '', '', 'Contact method', [
     'telephone' => 'Phone',
     'email' => 'Email'
 ]);
+$selectMultiple = new Select('spoken_langs', ['pl', 'en'], [], 'Spoken languages', [
+    'pl' => 'Polish',
+    'en' => 'English',
+    'de' => 'German',
+]);
 $submit = new Submit('submit', 'Send form');
 $tel = new Tel('phone_number', '', '', 'Contact phone');
 $textArea = new TextArea('introduction','', '', 'Introduction text');
@@ -95,6 +100,7 @@ print $password->render();
 print $reset->render();
 print $search->render();
 print $select->render();
+print $selectMultiple->render();
 print $submit->render();
 print $tel->render();
 print $textArea->render();

@@ -8,6 +8,7 @@ use Nethead\Forms\Renderers\Label as LabelRenderer;
 use Nethead\Forms\Renderers\Messages as MessagesRenderer;
 use Nethead\Forms\Renderers\Select as SelectRenderer;
 use Nethead\Forms\Renderers\Wrapper as WrapperRenderer;
+use Nethead\Markup\Foundation\Fragment;
 
 /**
  * Class Select
@@ -67,7 +68,7 @@ class Select extends DataField {
      * @param array $options
      * @return Fragment
      */
-    public function render(array $options = [])
+    public function render(array $options = []): Fragment
     {
         return Pipeline::send($this, $options, static::$pipeline);
     }

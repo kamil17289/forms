@@ -35,12 +35,16 @@ class Select extends Renderer {
             $options
         );
 
+        if (is_array($element->getValue())) {
+            $input->multiple();
+        }
+
         $fragment->push('input', $input);
     }
 
     /**
      * @param array $options
-     * @param $active
+     * @param array|string|bool $active
      * @return array
      */
     public static function createOptions(array $options, $active = false): array
@@ -86,8 +90,8 @@ class Select extends Renderer {
     {
         $option = new HtmlOption($value, $text);
 
-        if ($value == $active) {
-            $option->attrs()->set('selected', true);
+        if ((is_array($active) && in_array($value, $active)) || $value == $active) {
+            $option->selected();
         }
 
         return $option;

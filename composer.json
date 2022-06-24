@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^7.3",
-    "nethead/markup": "^2.0"
+    "nethead/markup": "^2.10"
   },
   "require-dev": {
     "phpunit/phpunit": "^9",

@@ -411,6 +411,11 @@ Search.appendIndex(
             "summary": "BooleanCheckbox\u0020constructor.",
             "url": "classes/Nethead-Forms-Inputs-BooleanCheckbox.html#method___construct"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Inputs\\BooleanCheckbox\u003A\u003AsetValue\u0028\u0029",
+            "name": "setValue",
+            "summary": "As\u0020this\u0020is\u0020a\u0020Boolean\u0020checkbox,\u0020it\u0027s\u0020value\u0020must\u0020always\u0020be\u00201.",
+            "url": "classes/Nethead-Forms-Inputs-BooleanCheckbox.html#method_setValue"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Inputs\\BooleanCheckbox\u003A\u003A\u0024pipeline",
             "name": "pipeline",
             "summary": "",
@@ -971,6 +976,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-BooleanCheckbox.html#method_render"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\BooleanCheckbox\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-BooleanCheckbox.html#property_options"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Button",
             "name": "Button",
             "summary": "",
@@ -981,6 +991,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Button.html#method_render"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Button\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Button.html#property_options"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Checkbox",
             "name": "Checkbox",
             "summary": "",
@@ -990,6 +1005,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Checkbox.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Checkbox\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Checkbox.html#property_options"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\DataList",
             "name": "DataList",
@@ -1006,6 +1026,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-DataList.html#method_createDataList"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\DataList\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-DataList.html#property_options"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\File",
             "name": "File",
             "summary": "",
@@ -1015,6 +1040,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-File.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\File\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-File.html#property_options"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Floating",
             "name": "Floating",
@@ -1046,6 +1076,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Input.html#method_render"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Input\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Input.html#property_options"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Integer",
             "name": "Integer",
             "summary": "",
@@ -1065,6 +1100,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Label.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Label\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Label.html#property_options"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Messages",
             "name": "Messages",
@@ -1095,6 +1135,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Radio.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Radio\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Radio.html#property_options"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Range",
             "name": "Range",
@@ -1151,6 +1196,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-Select.html#method_createOption"
         },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\Select\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-Select.html#property_options"
+        },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Text",
             "name": "Text",
             "summary": "",
@@ -1170,6 +1220,11 @@ Search.appendIndex(
             "name": "render",
             "summary": "",
             "url": "classes/Nethead-Forms-Renderers-TextArea.html#method_render"
+        },                {
+            "fqsen": "\\Nethead\\Forms\\Renderers\\TextArea\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/Nethead-Forms-Renderers-TextArea.html#property_options"
         },                {
             "fqsen": "\\Nethead\\Forms\\Renderers\\Wrapper",
             "name": "Wrapper",
