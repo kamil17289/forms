@@ -203,7 +203,9 @@ abstract class Form {
         $array = [];
 
         foreach($this->elements as $name => $element) {
-            $array[$name] = $element->getValue();
+            if (method_exists($element, 'getValue')) {
+                $array[$name] = $element->getValue();
+            }
         }
 
         return $array;
